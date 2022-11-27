@@ -1,0 +1,28 @@
+.left-card-header {
+    position: relative;
+    font-size: 2vw;
+    margin-bottom: 2vh;
+}
+
+.buttons-wrapper {
+    display: inline-flex;
+    background-color: rebeccapurple;
+    border-radius: 1vw;
+    border: 0.75vw solid rebeccapurple;
+}
+
+.valuta-button {
+    background-color: rebeccapurple;
+    border: 0.15vw solid lightskyblue;
+    width: 5vw;
+    height: 6vh;
+    border-radius: 0.5vw;
+    color: lightskyblue;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.valuta-button:hover {
+    background-color: lightskyblue;
+    color: rebeccapurple;
+}

@@ -1,0 +1,98 @@
+.right-ticket {
+    display: flex;
+    flex-direction: column;
+    min-width: 45vw;
+    border: 0.2vh solid black;
+    box-shadow: #000000 0.5vw 0.5vw 2vw -1vw ;
+    margin: 2vh 5vw 0 0;
+    padding: 3vh 1vw 1vh 1vw;
+    border-radius: 2vh;
+}
+
+.right-ticket:first-child {
+    margin-top: 10vh;
+}
+
+.tickets-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 2.5vh;
+    line-height: 0;
+    text-align: center;
+}
+
+.left-side {
+    flex-direction: column;
+}
+
+.tickets-time {
+    font-weight: bold;
+    font-size: 3vh;
+}
+
+.tickets-country {
+    display: flex;
+    flex-direction: row;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.little-line {
+    width: 20vw;
+    height: 0.1vh;
+    background-color: grey;
+}
+
+.right-card-middle-picture {
+    width: 3vw;
+    height: 3.5vh;
+    margin: 1vh 0 0 1vw;
+    background-image: url("../../../assets/img/plane-solid.svg");
+    background-repeat: no-repeat;
+}
+
+.right-side {
+    flex-direction: column;
+}
+
+.line-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.big-line {
+    width: 45vw;
+    height: 0.2vh;
+    background-color: #e0e0e0;
+    margin: 1.5vh 0 1.5vh 0;
+}
+
+.tickets-footer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.footers-picture {
+    min-width: 25vw;
+    height: 10vh;
+    background-image: url("../../../assets/img/flights company.jpeg");
+    background-repeat: no-repeat;
+}
+
+.button-for-buying-a-ticket {
+    max-width: 17vw;
+    height: 9vh;
+    background-color: darkorange;
+    color: white;
+    font-weight: bold;
+    border-color: darkred;
+    cursor: pointer;
+    font-size: 2.5vh;
+    padding: 1vh 2vw 1vh 2vw;
+}
