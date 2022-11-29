@@ -1,17 +1,21 @@
-import React, {useState} from 'react';
-import res from "../response";
+import React from "react";
 import Ticket from "./Ticket";
 
-const TicketList = () => {
-    const [state, setState] = useState(res)
-    console.log(state)
-    return (
-        <>
-          <div>
-            {state.map((e, index) => <Ticket item={e} key={index.toString()}/> )}
-          </div>
-        </>
-    );
+const TicketList = ({ ticketList, value, addValueInPopup }) => {
+  return (
+    <>
+      <div>
+        {ticketList.map((e, index) => (
+          <Ticket
+            addValueInPopup={addValueInPopup}
+            value={value}
+            item={e}
+            key={index.toString()}
+          />
+        ))}
+      </div>
+    </>
+  );
 };
 
 export default TicketList;

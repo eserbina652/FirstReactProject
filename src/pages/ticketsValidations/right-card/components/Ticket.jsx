@@ -1,44 +1,55 @@
-import React from 'react';
-import '../rightCard.css'
-import {greenCircle, companyName, greyPlane} from '../../../../assets/index.js'
+import React from "react";
+import "../rightCard.css";
 
-const Ticket = ({item}) => {
-    return (
-        <div className="right-ticket">
-            <div className="tickets-main">
-                <div className="left-side">
-                    <p className="tickets-time">{item.arrival_time}</p>
-                    <div className="tickets-country">
-                        <p>{item.origin}</p>
-                        <p>, {item.origin_name}</p>
-                    </div>
-                    <p>{item.arrival_date}</p>
-                </div>
-                <div className="middle">
-                    <p>{item.stops} transfers</p>
-                    <div className="little-line"></div>
-                    {/*<div className="right-card-middle-picture"></div>*/}
-                    <img className="right-card-middle-picture" src={greyPlane} alt=""/>
-                </div>
-                <div className="right-side">
-                    <p className="tickets-time">{item.departure_time}</p>
-                    <div className="tickets-country">
-                        <p>{item.destination}</p>
-                        <p>, {item.destination_name}</p>
-                    </div>
-                    <p>{item.departure_date}</p>
-                </div>
-            </div>
-            <div className="line-wrapper">
-                <div className="big-line"></div>
-            </div>
-            <div className="tickets-footer">
-                {/*<div className="footers-picture"></div>*/}
-                    <img className="footers-picture" src={companyName} alt="Эта дичь не отображается"/>
-                    <button className="button-for-buying-a-ticket">Buy for {item.price} ₴</button>
-            </div>
-        </div>
-    );
+import TicketsFooter from "./ticketsComponents/footer/TicketsFooter";
+import TicketsHeader from "./ticketsComponents/header/TicketsHeader";
+
+const Ticket = ({ item, value, addValueInPopup }) => {
+  const getCurrencySymbol = () => {
+    if (!item.currency) {
+      return "₴";
+    }
+    switch (item.currency) {
+      case "UAH":
+        return "₴";
+      case "USD":
+        return "$";
+      case "EUR":
+        return "€";
+      default:
+        return "₴";
+    }
+  };
+
+  const getPrise = () => {
+    if (!value) {
+      return item.price;
+    }
+    switch (value) {
+      case "UAH":
+        return item.price;
+      case "USD":
+        return item.price / 40;
+      case "EUR":
+        return (item.price / 42).toFixed(2);
+      default:
+        return item.price;
+    }
+  };
+
+  return (
+    <>
+      <div className="right-ticket">
+        <TicketsHeader item={item} />
+        <TicketsFooter
+          item={item}
+          addValueInPopup={addValueInPopup}
+          getPrise={getPrise}
+          getCurrencySymbol={getCurrencySymbol}
+        />
+      </div>
+    </>
+  );
 };
 
 export default Ticket;

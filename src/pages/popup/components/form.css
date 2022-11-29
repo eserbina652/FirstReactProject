@@ -1,0 +1,17 @@
+.popup-middle {
+    display: flex;
+    position: relative;
+}
+
+.popup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=text], input[type=number], input[type=email] {
+    font-size: 20px;
+    margin-bottom: 2vh;
+    background-color: aliceblue;
+    border: none;
+    border-bottom: 1px solid darkgrey;
+}

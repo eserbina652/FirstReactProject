@@ -1,0 +1,11 @@
+.close-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-button {
+   height: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: aliceblue;
+}
