@@ -5,9 +5,13 @@ import PopupForm from "./components/PopupForm";
 import CloseButton from "../../components/Button/CloseButton";
 import BuyButton from "../../components/Button/BuyButton";
 import Error from "../../errors/Error";
+// import { getCurrencySymbol, getPrise } from "../../utils/functionFromTicket.js";
+import { getCurrencySymbol, getPrise } from "../../utils/functionFromTicket.js";
+// import { getPrise } from "../../utils/functionFromTicket.js";
+
 // import ButtonForBuyTicket from "../../components/Button/ButtonForBuyTicket";
 
-const Popup = ({ item, getPrise, getCurrencySymbol, addValueInPopup }) => {
+const Popup = ({ item, addValueInPopup, value }) => {
   // const [formValue, setFormValue] = useState();
   //
   // const errCheck = () => {};
@@ -32,12 +36,13 @@ const Popup = ({ item, getPrise, getCurrencySymbol, addValueInPopup }) => {
             <Error />
           </div>
         </div>
-        {/*<BuyButton*/}
-        {/*  getPrise={getPrise}*/}
-        {/*  getCurrencySymbol={getCurrencySymbol}*/}
-        {/*  item={item}*/}
-        {/*  addValueInPopup={addValueInPopup}*/}
-        {/*/>*/}
+        <BuyButton
+          getPrise={getPrise}
+          getCurrencySymbol={getCurrencySymbol}
+          item={item}
+          value={value}
+          addValueInPopup={addValueInPopup}
+        />
       </div>
     </div>
   );

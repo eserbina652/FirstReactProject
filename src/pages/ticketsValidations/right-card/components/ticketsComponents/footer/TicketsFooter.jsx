@@ -2,13 +2,13 @@ import React from "react";
 import { companyName } from "../../../../../../assets";
 import "./footer.css";
 import BuyButton from "../../../../../../components/Button/BuyButton";
-
-const TicketsFooter = ({
-  getPrise,
+import {
   getCurrencySymbol,
-  addValueInPopup,
-  item,
-}) => {
+  getPrise,
+} from "../../../../../../utils/functionFromTicket.js";
+// import { getPrise } from "../../../../../../utils/functionFromTicket.js";
+
+const TicketsFooter = ({ addValueInPopup, item, value, onChangeValue }) => {
   return (
     <div>
       <div className="tickets-footer">
@@ -17,18 +17,19 @@ const TicketsFooter = ({
           src={companyName}
           alt="Эта дичь не отображается"
         />
-        {/*<BuyButton*/}
-        {/*    getPrise={getPrise}*/}
-        {/*    getCurrencySymbol={getCurrencySymbol}*/}
-        {/*    addValueInPopup={addValueInPopup}*/}
-        {/*    item={item}*/}
-        {/*/>*/}
-        <button
-          onClick={() => addValueInPopup(item)}
-          className="button-for-buy-a-ticket"
-        >
-          Buy for {getPrise()} {getCurrencySymbol()}
-        </button>
+        <BuyButton
+          onChangeValue={onChangeValue}
+          getPrise={getPrise(value, item)}
+          getCurrencySymbol={getCurrencySymbol(item)}
+          addValueInPopup={addValueInPopup}
+          item={item}
+        />
+        {/*<button*/}
+        {/*  onClick={() => addValueInPopup(item)}*/}
+        {/*  className="button-for-buy-a-ticket"*/}
+        {/*>*/}
+        {/*  Buy for {getPrise()} {getCurrencySymbol()}*/}
+        {/*</button>*/}
       </div>
     </div>
   );

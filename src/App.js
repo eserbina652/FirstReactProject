@@ -4,6 +4,7 @@ import "./app.css";
 import React, { useEffect, useState } from "react";
 import res from "./pages/ticketsValidations/right-card/response";
 import Popup from "./pages/popup/Popup";
+// import { getCurrencySymbol, getPrise } from "./utils/functionFromTicket.js";
 
 function App() {
   const [ticketList, setTicketList] = useState(res);
