@@ -1,10 +1,10 @@
 import React from "react";
 import "./err.css";
 
-const Error = () => {
+const Error = ({ error }) => {
   return (
     <div className="err-wrapper">
-      <p className="err-str">Incorrect</p>
+      <p className="err-str">{error}</p>
     </div>
   );
 };

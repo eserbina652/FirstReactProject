@@ -1,10 +1,12 @@
 import React from "react";
 import "./closeButton.css";
 
-const CloseButton = () => {
+const CloseButton = ({ closePopup }) => {
   return (
     <div className="close-button-wrapper">
-      <button className="close-button">x</button>
+      <button onClick={() => closePopup()} className="close-button">
+        x
+      </button>
     </div>
   );
 };

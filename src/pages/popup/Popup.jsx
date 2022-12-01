@@ -11,14 +11,18 @@ import { getCurrencySymbol, getPrise } from "../../utils/functionFromTicket.js";
 
 // import ButtonForBuyTicket from "../../components/Button/ButtonForBuyTicket";
 
-const Popup = ({ item, addValueInPopup, value }) => {
-  // const [formValue, setFormValue] = useState();
-  //
-  // const errCheck = () => {};
+const Popup = ({ item, addValueInPopup, value, closePopup }) => {
+  // const [email, setEmail] = useState('')
+  // const [password, setPassword] = useState('')
+  // const [emailDirty, setEmailDirty] = useState(false)
+  // const [passwordDirty, setPasswordDirty] = useState(false)
+  // const []
+  // const [error, setError] = useState(`incorrect ${}`)
+
   return (
     <div className="popup-wrapper">
       <div className="popup-little-window">
-        <CloseButton />
+        <CloseButton closePopup={closePopup} />
         <div className="popup-header">
           <h3 className="header-title">Your ticket</h3>
         </div>
@@ -28,17 +32,15 @@ const Popup = ({ item, addValueInPopup, value }) => {
         </h4>
         <div className="popup-form-wrapper">
           <PopupForm />
-          <div className="err-wrapper">
-            <Error />
-            <Error />
-            <Error />
-            <Error />
-            <Error />
-          </div>
+          {/*<div className="err-wrapper">*/}
+          {/*  <Error />*/}
+          {/*  <Error />*/}
+          {/*  <Error />*/}
+          {/*  <Error />*/}
+          {/*  <Error />*/}
+          {/*</div>*/}
         </div>
         <BuyButton
-          getPrise={getPrise}
-          getCurrencySymbol={getCurrencySymbol}
           item={item}
           value={value}
           addValueInPopup={addValueInPopup}

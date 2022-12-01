@@ -19,8 +19,6 @@ const Ticket = ({ item, value, addValueInPopup, onChangeValue }) => {
           item={item}
           value={value}
           addValueInPopup={addValueInPopup}
-          getPrise={getPrise}
-          getCurrencySymbol={getCurrencySymbol}
         />
       </div>
     </>

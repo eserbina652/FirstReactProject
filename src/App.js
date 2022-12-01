@@ -4,7 +4,6 @@ import "./app.css";
 import React, { useEffect, useState } from "react";
 import res from "./pages/ticketsValidations/right-card/response";
 import Popup from "./pages/popup/Popup";
-// import { getCurrencySymbol, getPrise } from "./utils/functionFromTicket.js";
 
 function App() {
   const [ticketList, setTicketList] = useState(res);
@@ -42,25 +41,37 @@ function App() {
     }
   };
 
+  const onClickAll = () => {
+    setTicketList(res);
+  };
+
   const onChangeValue = (str) => {
     setValue(str);
+
     console.log(str);
   };
 
   const addValueInPopup = (item) => {
     setPopupData(item);
   };
+
+  const closePopup = () => {
+    setPopupData(null);
+  };
+
   console.log(filter);
   return (
     <>
-      {popupData && <Popup item={popupData} />}
+      {popupData && <Popup closePopup={closePopup} item={popupData} />}
       <div className="all-wrapper">
         <LeftCard
+          onClickAll={onClickAll}
           onChangeValue={onChangeValue}
           onSetFilter={onSetFilter}
           onSort={onSort}
         />
         <TicketList
+          closePopup={closePopup}
           addValueInPopup={addValueInPopup}
           value={value}
           ticketList={ticketList}

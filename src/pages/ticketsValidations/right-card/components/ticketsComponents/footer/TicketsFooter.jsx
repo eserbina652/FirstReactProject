@@ -23,6 +23,7 @@ const TicketsFooter = ({ addValueInPopup, item, value, onChangeValue }) => {
           getCurrencySymbol={getCurrencySymbol(item)}
           addValueInPopup={addValueInPopup}
           item={item}
+          value={value}
         />
         {/*<button*/}
         {/*  onClick={() => addValueInPopup(item)}*/}

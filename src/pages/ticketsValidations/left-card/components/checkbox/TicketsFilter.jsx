@@ -1,7 +1,7 @@
 import React from "react";
 import "./checkbox.css";
 
-const TicketsFilter = ({ onSetFilter, onClick, onSort }) => {
+const TicketsFilter = ({ onSetFilter, onClickAll }) => {
   return (
     <div>
       <div>
@@ -13,7 +13,7 @@ const TicketsFilter = ({ onSetFilter, onClick, onSort }) => {
           className="tickets-form"
         >
           <label title={"All"} className="checkbox">
-            <input type="checkbox" onChange={onSort} />
+            <input type="checkbox" onChange={() => onClickAll()} />
             <div className="checkbox__text">All</div>
           </label>
           <label title={"Without transfers"} className="checkbox">
