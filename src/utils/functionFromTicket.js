@@ -1,8 +1,8 @@
-export const getCurrencySymbol = (item) => {
-  if (!item.currency) {
+export const getCurrencySymbol = (value) => {
+  if (!value) {
     return "₴";
   }
-  switch (item.currency) {
+  switch (value) {
     case "UAH":
       return "₴";
     case "USD":

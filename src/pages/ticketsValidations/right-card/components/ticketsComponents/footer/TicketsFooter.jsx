@@ -8,7 +8,13 @@ import {
 } from "../../../../../../utils/functionFromTicket.js";
 // import { getPrise } from "../../../../../../utils/functionFromTicket.js";
 
-const TicketsFooter = ({ addValueInPopup, item, value, onChangeValue }) => {
+const TicketsFooter = ({
+  addValueInPopup,
+  item,
+  value,
+  onChangeValue,
+  str,
+}) => {
   return (
     <div>
       <div className="tickets-footer">
@@ -18,6 +24,10 @@ const TicketsFooter = ({ addValueInPopup, item, value, onChangeValue }) => {
           alt="Эта дичь не отображается"
         />
         <BuyButton
+          onClick={() => {
+            addValueInPopup(item);
+            onChangeValue(str);
+          }}
           onChangeValue={onChangeValue}
           getPrise={getPrise(value, item)}
           getCurrencySymbol={getCurrencySymbol(item)}
@@ -25,12 +35,6 @@ const TicketsFooter = ({ addValueInPopup, item, value, onChangeValue }) => {
           item={item}
           value={value}
         />
-        {/*<button*/}
-        {/*  onClick={() => addValueInPopup(item)}*/}
-        {/*  className="button-for-buy-a-ticket"*/}
-        {/*>*/}
-        {/*  Buy for {getPrise()} {getCurrencySymbol()}*/}
-        {/*</button>*/}
       </div>
     </div>
   );
