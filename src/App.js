@@ -62,7 +62,13 @@ function App() {
   console.log(filter);
   return (
     <>
-      {popupData && <Popup closePopup={closePopup} item={popupData} />}
+      {popupData && (
+        <Popup
+          closePopup={closePopup}
+          item={popupData}
+          addValueInPopup={addValueInPopup}
+        />
+      )}
       <div className="all-wrapper">
         <LeftCard
           onClickAll={onClickAll}
