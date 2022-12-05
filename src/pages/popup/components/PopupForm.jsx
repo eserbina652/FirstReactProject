@@ -60,6 +60,7 @@ const PopupForm = ({ item, value, addValueInPopup }) => {
         handleChange,
         handleBlur,
         handleSubmit,
+        isSubmitting,
         /*and other goodies*/
       }) => (
         <form className="popup-form" onSubmit={handleSubmit}>
@@ -73,7 +74,7 @@ const PopupForm = ({ item, value, addValueInPopup }) => {
               name="name"
               placeholder="Write your name"
             />
-            {errors?.email && <Error error={errors.email} />}
+            {errors?.name && <Error error={errors.name} />}
           </div>
           <div className="surname-input" style={{ display: "flex" }}>
             <input
@@ -85,7 +86,7 @@ const PopupForm = ({ item, value, addValueInPopup }) => {
               name="surname"
               placeholder="Write your surname"
             />
-            {errors?.email && <Error error={errors.email} />}
+            {errors?.surname && <Error error={errors.surname} />}
           </div>
           <div className="email-input" style={{ display: "flex" }}>
             <input
@@ -109,7 +110,7 @@ const PopupForm = ({ item, value, addValueInPopup }) => {
               name="phone"
               placeholder="Write your phone"
             />
-            {errors?.email && <Error error={errors.email} />}
+            {errors?.phone && <Error error={errors.phone} />}
           </div>
           <div className="passport-input" style={{ display: "flex" }}>
             <input
@@ -121,13 +122,13 @@ const PopupForm = ({ item, value, addValueInPopup }) => {
               name="passport"
               placeholder="Write your passport"
             />
-            {errors?.email && <Error error={errors.email} />}
+            {errors?.passport && <Error error={errors.passport} />}
           </div>
           <button
             onSubmit={handleSubmit}
             className="button-for-buy-a-ticket"
             type="submit"
-            // disabled={isSubmiting}
+            disabled={isSubmitting}
             id="popup-button"
           >
             Buy for {getPrise(item, value)} {getCurrencySymbol(value)}
