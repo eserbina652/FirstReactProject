@@ -52,91 +52,172 @@ const PopupForm = ({ item, value, addValueInPopup }) => {
           addValueInPopup(null);
           // handleAddtoLocalStorag("2", values);
         }}
-      />
-      {({
-        values,
-        errors,
-        touched,
-        handleChange,
-        handleBlur,
-        handleSubmit,
-        isSubmitting,
-        /*and other goodies*/
-      }) => (
-        <form className="popup-form" onSubmit={handleSubmit}>
-          <div className="name-input" style={{ display: "flex" }}>
-            <input
-              type="text"
-              onBlur={handleBlur}
-              onChange={handleChange}
-              value={values.name}
-              className="form-input"
-              name="name"
-              placeholder="Write your name"
-            />
-            {errors?.name && <Error error={errors.name} />}
-          </div>
-          <div className="surname-input" style={{ display: "flex" }}>
-            <input
-              type="text"
-              onBlur={handleBlur}
-              onChange={handleChange}
-              value={values.surname}
-              className="form-input"
-              name="surname"
-              placeholder="Write your surname"
-            />
-            {errors?.surname && <Error error={errors.surname} />}
-          </div>
-          <div className="email-input" style={{ display: "flex" }}>
-            <input
-              type="text"
-              onBlur={handleBlur}
-              onChange={handleChange}
-              value={values.email}
-              className="form-input"
-              name="email"
-              placeholder="Write your email"
-            />
-            {errors?.email && <Error error={errors.email} />}
-          </div>
-          <div className="phone-input" style={{ display: "flex" }}>
-            <input
-              type="text"
-              onBlur={handleBlur}
-              onChange={handleChange}
-              value={values.phone}
-              className="form-input"
-              name="phone"
-              placeholder="Write your phone"
-            />
-            {errors?.phone && <Error error={errors.phone} />}
-          </div>
-          <div className="passport-input" style={{ display: "flex" }}>
-            <input
-              type="text"
-              onBlur={handleBlur}
-              onChange={handleChange}
-              value={values.passport}
-              className="form-input"
-              name="passport"
-              placeholder="Write your passport"
-            />
-            {errors?.passport && <Error error={errors.passport} />}
-          </div>
-          <button
-            onSubmit={handleSubmit}
-            className="button-for-buy-a-ticket"
-            type="submit"
-            disabled={isSubmitting}
-            id="popup-button"
-          >
-            Buy for {getPrise(item, value)} {getCurrencySymbol(value)}
-          </button>
-        </form>
-      )}
+      >
+        {({
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+          isSubmitting,
+          /*and other goodies*/
+        }) => (
+          <form className="popup-form" onSubmit={handleSubmit}>
+            <div className="name-input" style={{ display: "flex" }}>
+              <input
+                type="text"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.name}
+                className="form-input"
+                name="name"
+                placeholder="Write your name"
+              />
+              {errors?.name && <Error error={errors.name} />}
+            </div>
+            <div className="surname-input" style={{ display: "flex" }}>
+              <input
+                type="text"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.surname}
+                className="form-input"
+                name="surname"
+                placeholder="Write your surname"
+              />
+              {errors?.surname && <Error error={errors.surname} />}
+            </div>
+            <div className="email-input" style={{ display: "flex" }}>
+              <input
+                type="text"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.email}
+                className="form-input"
+                name="email"
+                placeholder="Write your email"
+              />
+              {errors?.email && <Error error={errors.email} />}
+            </div>
+            <div className="phone-input" style={{ display: "flex" }}>
+              <input
+                type="text"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.phone}
+                className="form-input"
+                name="phone"
+                placeholder="Write your phone"
+              />
+              {errors?.phone && <Error error={errors.phone} />}
+            </div>
+            <div className="passport-input" style={{ display: "flex" }}>
+              <input
+                type="text"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.passport}
+                className="form-input"
+                name="passport"
+                placeholder="Write your passport"
+              />
+              {errors?.passport && <Error error={errors.passport} />}
+            </div>
+            <button
+              onSubmit={handleSubmit}
+              className="button-for-buy-a-ticket"
+              type="submit"
+              disabled={isSubmitting}
+              id="popup-button"
+            >
+              Buy for {getPrise(item, value)} {getCurrencySymbol(value)}
+            </button>
+          </form>
+        )}
+      </Formik>
     </div>
   );
 };
 
-export default PopupForm;
+// export default PopupForm;
+//
+// import React, { useEffect, useState } from "react";
+// import "./form.css";
+// import BuyButton from "../../../components/Button/BuyButton";
+// import { Formik } from "formik";
+// import Error from "../../../errors/Error";
+// import { getCurrencySymbol, getPrise } from "../../../utils/functionFromTicket";
+// import { formValidation } from "../../../validation/FormValidation";
+//
+// const PopupForm = ({ item, value, addValueInPopup }) => {
+//
+//     return (
+//         <div className="popup-middle">
+//             <Formik
+//                 initialValues={{
+//                     email: "",
+//                     phone: "",
+//                     name: "",
+//                     surname: "",
+//                     passport: "",
+//                 }}
+//                 validate={formValidation}
+//                 onSubmit={(values, { setSubmitting }) => {
+//                     addValueInPopup(null);
+//                     // handleAddtoLocalStorag("2", values);
+//                 }}
+//             >
+//                 {({
+//                       values,
+//                       errors,
+//                       touched,
+//                       handleChange,
+//                       handleBlur,
+//                       handleSubmit,
+//                       isSubmitting,
+//                       /* and other goodies */
+//                   }) => (
+//                     <form className="popup-form" onSubmit={handleSubmit}>
+//                         <div className="name-input" style={{ display: "flex" }}>
+//                             <input
+//                                 onBlur={handleBlur}
+//                                 onChange={handleChange}
+//                                 value={values.email}
+//                                 className="form-input"
+//                                 type="email"
+//                                 name={"email"}
+//                                 placeholder="write your email"
+//                             />
+//                             {errors?.email && <Error error={errors.email} />}
+//                         </div>
+//                         <div className="surname-input" style={{ display: "flex" }}>
+//                             <input
+//                                 onBlur={handleBlur}
+//                                 onChange={handleChange}
+//                                 value={values.phone}
+//                                 className="form-input"
+//                                 type="text"
+//                                 name={"phone"}
+//                                 placeholder="write your phone"
+//                             />
+//                             {errors.phone && <Error error={errors.phone} />}
+//                         </div>
+//                         <button
+//                             onSubmit={handleSubmit}
+//                             className="button-for-buy-a-ticket"
+//                             id={"popup-button"}
+//                             type={"submit"}
+//                             disabled={isSubmitting}
+//                         >
+//                             Buy for {getPrise(item, value)} {getCurrencySymbol(value)}
+//                         </button>
+//                     </form>
+//                 )}
+//             </Formik>
+//         </div>
+//     );
+// };
+//
+// export default PopupForm;
+//
