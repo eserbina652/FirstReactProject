@@ -5,6 +5,7 @@ import BuyButton from "../../../components/Button/BuyButton";
 import error from "../../../errors/Error";
 import { Formik } from "formik";
 import { formValidation } from "../../../validations/FormValidations";
+import { getCurrencySymbol, getPrise } from "../../../utils/functionFromTicket";
 
 const PopupForm = ({ item, value, addValueInPopup }) => {
   // const email = useInput("", { isEmpty: true, minLength: 10, isEmail: true });
@@ -43,7 +44,7 @@ const PopupForm = ({ item, value, addValueInPopup }) => {
           name: "",
           surname: "",
           email: "",
-          phoneNumber: "",
+          phone: "",
           passport: "",
         }}
         validate={formValidation}
@@ -52,114 +53,87 @@ const PopupForm = ({ item, value, addValueInPopup }) => {
           // handleAddtoLocalStorag("2", values);
         }}
       />
-      {/*<form*/}
-      {/*  className="popup-form"*/}
-      {/*  action="/react/first-project-of-react/public"*/}
-      {/*>*/}
-      {/*  <div className="name-input" style={{ display: "flex" }}>*/}
-      {/*    <input*/}
-      {/*      onBlur={(e) => name.onBlur(e)}*/}
-      {/*      onChange={(e) => name.onChange(e)}*/}
-      {/*      value={name.value}*/}
-      {/*      className="form-input"*/}
-      {/*      type="text"*/}
-      {/*      placeholder="write your name"*/}
-      {/*    />*/}
-      {/*    {name.isDirty && name.isEmpty && <Error error={name.error.isEmpty} />}*/}
-      {/*    {name.isDirty && name.minLengthError && (*/}
-      {/*      <Error error={name.error.minLengthError} />*/}
-      {/*    )}*/}
-      {/*    {name.isDirty && name.nameError && (*/}
-      {/*      <Error error={name.error.nameError} />*/}
-      {/*    )}*/}
-      {/*  </div>*/}
-      {/*  <div className="surname-input" style={{ display: "flex" }}>*/}
-      {/*    <input*/}
-      {/*      onBlur={(e) => surname.onBlur(e)}*/}
-      {/*      onChange={(e) => surname.onChange(e)}*/}
-      {/*      value={surname.value}*/}
-      {/*      className="form-input"*/}
-      {/*      type="text"*/}
-      {/*      placeholder="write your surname"*/}
-      {/*    />*/}
-      {/*    {surname.isDirty && surname.isEmpty && (*/}
-      {/*      <Error error={surname.error.isEmpty} />*/}
-      {/*    )}*/}
-      {/*    {surname.isDirty && surname.minLengthError && (*/}
-      {/*      <Error error={surname.error.minLengthError} />*/}
-      {/*    )}*/}
-      {/*    {surname.isDirty && surname.surnameError && (*/}
-      {/*      <Error error={surname.error.surnameError} />*/}
-      {/*    )}*/}
-      {/*  </div>*/}
-      {/*  <div className="email-input" style={{ display: "flex" }}>*/}
-      {/*    <input*/}
-      {/*      onBlur={(e) => email.onBlur(e)}*/}
-      {/*      onChange={(e) => email.onChange(e)}*/}
-      {/*      value={email.value}*/}
-      {/*      className="form-input"*/}
-      {/*      type="email"*/}
-      {/*      placeholder="write your e-mail"*/}
-      {/*    />*/}
-      {/*    {email.isDirty && email.isEmpty && (*/}
-      {/*      <Error error={email.error.isEmpty} />*/}
-      {/*    )}*/}
-      {/*    {email.isDirty && email.minLengthError && (*/}
-      {/*      <Error error={email.error.minLengthError} />*/}
-      {/*    )}*/}
-      {/*    {email.isDirty && email.emailError && (*/}
-      {/*      <Error error={email.error.emailError} />*/}
-      {/*    )}*/}
-      {/*  </div>*/}
-      {/*  <div className="number-input" style={{ display: "flex" }}>*/}
-      {/*    <input*/}
-      {/*      onBlur={(e) => phone.onBlur(e)}*/}
-      {/*      onChange={(e) => phone.onChange(e)}*/}
-      {/*      value={phone.value}*/}
-      {/*      className="form-input"*/}
-      {/*      type="text"*/}
-      {/*      placeholder="write your phone number"*/}
-      {/*    />*/}
-      {/*    {phone.isDirty && phone.isEmpty && (*/}
-      {/*      <Error error={phone.error.isEmpty} />*/}
-      {/*    )}*/}
-      {/*    {phone.isDirty && phone.minLengthError && (*/}
-      {/*      <Error error={phone.error.minLengthError} />*/}
-      {/*    )}*/}
-      {/*    {phone.isDirty && phone.phoneError && (*/}
-      {/*      <Error error={phone.error.maxLengthError} />*/}
-      {/*    )}*/}
-      {/*    {phone.isDirty && phone.phoneError && (*/}
-      {/*      <Error error={phone.error.phoneError} />*/}
-      {/*    )}*/}
-      {/*  </div>*/}
-      {/*  <div className="passport-input" style={{ display: "flex" }}>*/}
-      {/*    <input*/}
-      {/*      onBlur={(e) => passport.onBlur(e)}*/}
-      {/*      onChange={(e) => passport.onChange(e)}*/}
-      {/*      value={passport.value}*/}
-      {/*      className="form-input"*/}
-      {/*      type="text"*/}
-      {/*      placeholder="write your passport series"*/}
-      {/*    />*/}
-      {/*    {passport.isDirty && passport.isEmpty && (*/}
-      {/*      <Error error={passport.error.isEmpty} />*/}
-      {/*    )}*/}
-      {/*    {passport.isDirty && passport.error.passportError && (*/}
-      {/*      <Error error={passport.error.passportError} />*/}
-      {/*    )}*/}
-      {/*  </div>*/}
-      <BuyButton
-        additionalStyle={"popup-button"}
-        item={item}
-        value={value}
-        onClick={() => {
-          if (isDesaible) {
-            addValueInPopup(item);
-          }
-        }}
-      />
-      {/*// </form>*/}
+      {({
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        /*and other goodies*/
+      }) => (
+        <form className="popup-form" onSubmit={handleSubmit}>
+          <div className="name-input" style={{ display: "flex" }}>
+            <input
+              type="text"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.name}
+              className="form-input"
+              name="name"
+              placeholder="Write your name"
+            />
+            {errors?.email && <Error error={errors.email} />}
+          </div>
+          <div className="surname-input" style={{ display: "flex" }}>
+            <input
+              type="text"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.surname}
+              className="form-input"
+              name="surname"
+              placeholder="Write your surname"
+            />
+            {errors?.email && <Error error={errors.email} />}
+          </div>
+          <div className="email-input" style={{ display: "flex" }}>
+            <input
+              type="text"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.email}
+              className="form-input"
+              name="email"
+              placeholder="Write your email"
+            />
+            {errors?.email && <Error error={errors.email} />}
+          </div>
+          <div className="phone-input" style={{ display: "flex" }}>
+            <input
+              type="text"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.phone}
+              className="form-input"
+              name="phone"
+              placeholder="Write your phone"
+            />
+            {errors?.email && <Error error={errors.email} />}
+          </div>
+          <div className="passport-input" style={{ display: "flex" }}>
+            <input
+              type="text"
+              onBlur={handleBlur}
+              onChange={handleChange}
+              value={values.passport}
+              className="form-input"
+              name="passport"
+              placeholder="Write your passport"
+            />
+            {errors?.email && <Error error={errors.email} />}
+          </div>
+          <button
+            onSubmit={handleSubmit}
+            className="button-for-buy-a-ticket"
+            type="submit"
+            // disabled={isSubmiting}
+            id="popup-button"
+          >
+            Buy for {getPrise(item, value)} {getCurrencySymbol(value)}
+          </button>
+        </form>
+      )}
     </div>
   );
 };
