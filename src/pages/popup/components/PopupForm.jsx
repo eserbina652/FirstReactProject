@@ -47,6 +47,10 @@ const PopupForm = ({ item, value, addValueInPopup }) => {
           passport: "",
         }}
         validate={formValidation}
+        onSubmit={(value, { setSubmitting }) => {
+          addValueInPopup(null);
+          // handleAddtoLocalStorag("2", values);
+        }}
       />
       {/*<form*/}
       {/*  className="popup-form"*/}
