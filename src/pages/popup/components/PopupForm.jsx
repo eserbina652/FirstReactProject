@@ -4,6 +4,7 @@ import Error from "../../../errors/Error";
 import BuyButton from "../../../components/Button/BuyButton";
 import error from "../../../errors/Error";
 import { Formik } from "formik";
+import { formValidation } from "../../../validations/FormValidations";
 
 const PopupForm = ({ item, value, addValueInPopup }) => {
   // const email = useInput("", { isEmpty: true, minLength: 10, isEmail: true });
@@ -37,7 +38,16 @@ const PopupForm = ({ item, value, addValueInPopup }) => {
   // console.log("isDesaible", isDesaible);
   return (
     <div className="popup-middle">
-      <Formik />
+      <Formik
+        initialValues={{
+          name: "",
+          surname: "",
+          email: "",
+          phoneNumber: "",
+          passport: "",
+        }}
+        validate={formValidation}
+      />
       {/*<form*/}
       {/*  className="popup-form"*/}
       {/*  action="/react/first-project-of-react/public"*/}
