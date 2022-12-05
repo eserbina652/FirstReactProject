@@ -1,5 +1,17 @@
 export const formValidation = (values) => {
   const errors = {};
+  if (!values.name) {
+    errors.name = "Required";
+  } else if (!/^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/gim.test(values.name)) {
+    errors.name = "Invalid name";
+  }
+  if (!values.surname) {
+    errors.surname = "Required";
+  } else if (
+    !/^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/gim.test(values.surname)
+  ) {
+    errors.surname = "Invalid surname";
+  }
   if (!values.email) {
     errors.email = "Required";
   } else if (
@@ -16,7 +28,12 @@ export const formValidation = (values) => {
   ) {
     errors.phone = "Invalid phone";
   }
-  console.log("error", errors);
+  if (!values.passport) {
+    errors.passport = "Required";
+  } else if (!/^\d{6}[A-Z]{2}$/.test(values.passport)) {
+    errors.passport = "Invalid passport";
+  }
+
   return errors;
 };
 
