@@ -6,15 +6,8 @@ import {
   getCurrencySymbol,
   getPrise,
 } from "../../../../../../utils/functionFromTicket.js";
-// import { getPrise } from "../../../../../../utils/functionFromTicket.js";
 
-const TicketsFooter = ({
-  addValueInPopup,
-  item,
-  value,
-  onChangeValue,
-  str,
-}) => {
+const TicketsFooter = ({ addValueInPopup, item, value }) => {
   return (
     <div>
       <div className="tickets-footer">
@@ -26,9 +19,7 @@ const TicketsFooter = ({
         <BuyButton
           onClick={() => {
             addValueInPopup(item);
-            onChangeValue(str);
           }}
-          onChangeValue={onChangeValue}
           getPrise={getPrise(value, item)}
           getCurrencySymbol={getCurrencySymbol(item)}
           addValueInPopup={addValueInPopup}

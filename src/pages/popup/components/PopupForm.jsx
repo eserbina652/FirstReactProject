@@ -6,35 +6,6 @@ import { formValidation } from "../../../validations/FormValidations";
 import { getCurrencySymbol, getPrise } from "../../../utils/functionFromTicket";
 
 const PopupForm = ({ item, value, addValueInPopup, openSuccess }) => {
-  // const email = useInput("", { isEmpty: true, minLength: 10, isEmail: true });
-  // const name = useInput("", { isEmpty: true, minLength: 2, isName: true });
-  // const surname = useInput("", {
-  //   isEmpty: true,
-  //   minLength: 2,
-  //   isSurname: true,
-  // });
-  // const phone = useInput("", {
-  //   isEmpty: true,
-  //   minLength: 9,
-  //   isPhone: true,
-  // });
-  // const passport = useInput("", {
-  //   isEmpty: true,
-  //   isPassport: true,
-  // });
-  // const isDesaible =
-  //   !!email.error?.emailError &&
-  //   // !!email.isEmpty &&
-  //   !!name.error?.nameError &&
-  //   // !!name.isEmpty &&
-  //   !!surname.error?.surnameError &&
-  //   // !!surname.isEmpty &&
-  //   !!phone.error?.phoneError &&
-  //   // !!phone.isEmpty &&
-  //   !!passport.error?.passportError;
-  // // !!passport.isEmpty;
-  //
-  // console.log("isDesaible", isDesaible);
   return (
     <div className="popup-middle">
       <Formik

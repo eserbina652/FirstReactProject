@@ -9,13 +9,12 @@ import {
 import TicketsFooter from "./ticketsComponents/footer/TicketsFooter";
 import TicketsHeader from "./ticketsComponents/header/TicketsHeader";
 
-const Ticket = ({ item, value, addValueInPopup, onChangeValue }) => {
+const Ticket = ({ item, value, addValueInPopup }) => {
   return (
     <>
       <div className="right-ticket">
         <TicketsHeader item={item} />
         <TicketsFooter
-          onChangeValue={onChangeValue}
           item={item}
           value={value}
           addValueInPopup={addValueInPopup}

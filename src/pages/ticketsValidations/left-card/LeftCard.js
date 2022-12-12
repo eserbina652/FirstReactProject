@@ -4,16 +4,12 @@ import TicketsFilter from "./components/checkbox/TicketsFilter";
 import "./leftcard.css";
 import SortButton from "../../../components/Button/SortButton";
 
-const LeftCard = ({ onSort, onSetFilter, onChangeValue, onClickAll }) => {
+const LeftCard = ({ onChangeValue }) => {
   return (
     <div className="left-card-wrapper">
       <ValutaButton onChangeValue={onChangeValue} />
-      <TicketsFilter
-        onClickAll={onClickAll}
-        onSort={onSort}
-        onSetFilter={onSetFilter}
-      />
-      <SortButton onClick={onSort} title={"Sort"} styles={"_sortButton"} />
+      <TicketsFilter />
+      <SortButton title={"Sort"} styles={"_sortButton"} />
     </div>
   );
 };

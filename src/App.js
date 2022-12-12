@@ -2,58 +2,32 @@ import LeftCard from "./pages/ticketsValidations/left-card/LeftCard";
 import TicketList from "./pages/ticketsValidations/right-card/components/TicketList";
 import "./app.css";
 import React, { useEffect, useState } from "react";
-import res from "./pages/ticketsValidations/right-card/response";
 import Popup from "./pages/popup/Popup";
 import PopupSuccess from "./pages/successfulPopup/PopupSuccess";
+import { useDispatch, useSelector } from "react-redux";
+import { onResetFilter, onSelectFilter } from "./store/reducers/tikets";
 
 function App() {
-  const [ticketList, setTicketList] = useState(res);
-  const [filter, setFilter] = useState([]);
+  const data = useSelector((state) => state.tickets.ticketsData);
+  const filters = useSelector((state) => state.tickets.filters);
+  const dispatch = useDispatch();
+  //TODO Перенести логику изменения валюты в редакс
+  //TODO  Перенести логику изменения валюты в редакс
+  // TODO перенести логику работы с попапом в редакс
   const [value, setValue] = useState("UAH");
   const [popupData, setPopupData] = useState(null);
   const [popupSuccess, setPopupSuccess] = useState(false);
 
-  // useEffect(() => {
-  //   if ()
-  // })
-
   useEffect(() => {
-    if (filter.length) {
-      onSortByTransfers();
+    if (filters.length) {
+      dispatch(onSelectFilter());
+    } else {
+      dispatch(onResetFilter());
     }
-  }, [filter.length]);
-
-  const onSort = () => {
-    setTicketList((prevState) => {
-      const temp = [...prevState];
-      temp.sort((a, b) => a.stops - b.stops);
-      console.log("temp", temp);
-      return temp;
-    });
-  };
-
-  const onSortByTransfers = () => {
-    setTicketList(res.filter((el) => filter.includes(el.stops)));
-  };
-
-  const onSetFilter = (num) => {
-    // console.log("zdes");
-    if (num || num === 0) {
-      if (filter?.includes(num)) {
-        setFilter((prevState) => prevState?.filter((el) => el !== num));
-      } else {
-        setFilter((prevState) => [...prevState, num]);
-      }
-    }
-  };
-
-  const onClickAll = () => {
-    setTicketList(res);
-  };
+  }, [filters.length]);
 
   const onChangeValue = (str) => {
     setValue(str);
-
     console.log(str);
   };
 
@@ -75,7 +49,6 @@ function App() {
     }, 10000);
   };
 
-  console.log(filter);
   return (
     <>
       {popupData && (
@@ -88,17 +61,12 @@ function App() {
       )}
       {popupSuccess && <PopupSuccess closePopup={closePopup} />}
       <div className="all-wrapper">
-        <LeftCard
-          onClickAll={onClickAll}
-          onChangeValue={onChangeValue}
-          onSetFilter={onSetFilter}
-          onSort={onSort}
-        />
+        <LeftCard onChangeValue={onChangeValue} />
         <TicketList
           closePopup={closePopup}
           addValueInPopup={addValueInPopup}
           value={value}
-          ticketList={ticketList}
+          ticketList={data}
         />
       </div>
     </>
