@@ -5,7 +5,7 @@ import { Formik } from "formik";
 import { formValidation } from "../../../validations/FormValidations";
 import { getCurrencySymbol, getPrise } from "../../../utils/functionFromTicket";
 
-const PopupForm = ({ item, value, addValueInPopup }) => {
+const PopupForm = ({ item, value, addValueInPopup, openSuccess }) => {
   // const email = useInput("", { isEmpty: true, minLength: 10, isEmail: true });
   // const name = useInput("", { isEmpty: true, minLength: 2, isName: true });
   // const surname = useInput("", {
@@ -48,6 +48,7 @@ const PopupForm = ({ item, value, addValueInPopup }) => {
         validate={formValidation}
         onSubmit={(value, { setSubmitting }) => {
           addValueInPopup(null);
+          openSuccess();
           // handleAddtoLocalStorag("2", values);
         }}
       >

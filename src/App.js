@@ -4,12 +4,18 @@ import "./app.css";
 import React, { useEffect, useState } from "react";
 import res from "./pages/ticketsValidations/right-card/response";
 import Popup from "./pages/popup/Popup";
+import PopupSuccess from "./pages/successfulPopup/PopupSuccess";
 
 function App() {
   const [ticketList, setTicketList] = useState(res);
   const [filter, setFilter] = useState([]);
   const [value, setValue] = useState("UAH");
   const [popupData, setPopupData] = useState(null);
+  const [popupSuccess, setPopupSuccess] = useState(false);
+
+  // useEffect(() => {
+  //   if ()
+  // })
 
   useEffect(() => {
     if (filter.length) {
@@ -54,15 +60,33 @@ function App() {
   const addValueInPopup = (item) => {
     setPopupData(item);
   };
-
   const closePopup = () => {
     setPopupData(null);
+    setPopupSuccess(false);
+  };
+
+  const openSuccess = () => {
+    if (popupData) {
+      setPopupData(null);
+      setPopupSuccess(true);
+    }
+    setTimeout(() => {
+      setPopupSuccess(false);
+    }, 10000);
   };
 
   console.log(filter);
   return (
     <>
-      {popupData && <Popup closePopup={closePopup} item={popupData} />}
+      {popupData && (
+        <Popup
+          openSuccess={openSuccess}
+          closePopup={closePopup}
+          item={popupData}
+          addValueInPopup={addValueInPopup}
+        />
+      )}
+      {popupSuccess && <PopupSuccess closePopup={closePopup} />}
       <div className="all-wrapper">
         <LeftCard
           onClickAll={onClickAll}

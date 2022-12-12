@@ -3,9 +3,8 @@ import "./popup.css";
 import TicketsHeader from "../ticketsValidations/right-card/components/ticketsComponents/header/TicketsHeader";
 import PopupForm from "./components/PopupForm";
 import CloseButton from "../../components/Button/CloseButton";
-import BuyButton from "../../components/Button/BuyButton";
 
-const Popup = ({ item, addValueInPopup, value, closePopup }) => {
+const Popup = ({ item, addValueInPopup, value, closePopup, openSuccess }) => {
   console.log("item", item);
   return (
     <div className="popup-wrapper">
@@ -20,6 +19,7 @@ const Popup = ({ item, addValueInPopup, value, closePopup }) => {
         </h4>
         <div className="popup-form-wrapper">
           <PopupForm
+            openSuccess={openSuccess}
             addValueInPopup={addValueInPopup}
             item={item}
             value={value}
