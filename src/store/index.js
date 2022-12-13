@@ -1,8 +1,10 @@
-import {configureStore} from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import { ticketsSlice } from "./redusers/tickets";
 
-export default const configureStore = {
-    reducer:
-}
+export default configureStore = {
+  reducer: { tickets: ticketsSlice },
+};
+
 /*
 store/index.js
 configureStore - это функция которая позволяет использовать множество reducerов
