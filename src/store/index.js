@@ -1,3 +1,8 @@
+import {configureStore} from "@reduxjs/toolkit";
+
+export default const configureStore = {
+    reducer:
+}
 /*
 store/index.js
 configureStore - это функция которая позволяет использовать множество reducerов

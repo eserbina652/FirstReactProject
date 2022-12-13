@@ -9,8 +9,36 @@ const initialState = {
 export const ticketsSlice = createSlice({
   name: "tickets",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    onSelect: (state, action) => {
+      state.ticketsData.sort((a, b) => a.stops - b.stops);
+      return state;
+    },
+    onSetFilter: (state, action) => {
+      if (action.payload || action.payload === 0) {
+        if (state.filters?.includes(action.payload)) {
+          state.filters = state.filters.filter((el) => el !== action.payload);
+        } else {
+          state.filters = [...state.filters, action.payload];
+        }
+      }
+      return state;
+    },
+    onSelectFilter: (state, action) => {
+      state.ticketsData = initialState.ticketsData.filter((el) => {
+        state.filters.includes(el.stops);
+      });
+      return state;
+    },
+    onResetFiter: (state, action) => {
+      return initialState;
+    },
+  },
 });
+
+export const { onSelect, onSetFilter, onSelectFilter, onResetFilter } =
+  ticketsSlice.actions;
+export default ticketsSlice.reducer;
 /*
 tickets/index.js
 импортируем функцию createSlice(деструктуризируя) и рез
@@ -22,13 +50,15 @@ ticketsData и значением рез, а также фильтры со зн
 изначальное состояние: изначальное состояние, и reducers,
 значением которого будут методы(экшены в дальнейшем),
 каждый метод принимает состояние и экшн, а методы следующие:
-
+*/
+/*
 onSelect: (состояние и экшн) в теле данного метода
 будет выполняться сортировка по количеству остановок,
 для этого нужно обратиться к состоянию.элементу ticketsData
 и вызвать метод сорт в котором указать логику а-б.
 Обязательно возвращать стейт(состояние) перед завершением каждого метода.
-
+*/
+/*
 onSetFilter: тут выполняется изменение первоначального состояния и
 добавление в массив данных о количестве пересадок для тех билетов,
 которые с помощью чекбокса выбрал пользователь.
@@ -38,14 +68,16 @@ onSetFilter: тут выполняется изменение первонача
 если елемент не равен action.payload, и есл присваиваем state.filters новый массив
 в который разворачиваем систояниепо ссылке фильтры и сам action.payload.
 Обязательно возвращаем стейт.
-
+*/
+/*
 onSelectFilter: изменяет состояние массива с помощью выбранных пользователем данных
 в теле метода присваиваем состоянию.информации о билетах =
 изначальное значение.информация о билетах.вызов метода фильтр,
 в котором каждый ел будет проверяться на наличие подходящего количества остановок и
 заноситься(с помощью метода includes) в состояние.фильтры
 Обязательно возвращаем стейт.
-
+*/
+/*
 onResetFilter: возвращение билетов флаг сортировки с которых был снят
 в теле метода просто возвращаем изначальное состояние
 
