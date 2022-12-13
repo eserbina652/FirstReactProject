@@ -1,3 +1,16 @@
+import { createSlice } from "@reduxjs/toolkit";
+import res from "../../../pages/ticketsValidations/right-card/response";
+
+const initialState = {
+  ticketsData: res,
+  filters: [],
+};
+
+export const ticketsSlice = createSlice({
+  name: "tickets",
+  initialState: initialState,
+  reducers: {},
+});
 /*
 tickets/index.js
 импортируем функцию createSlice(деструктуризируя) и рез
