@@ -24,7 +24,7 @@ export const ticketsSlice = createSlice({
       return state;
     },
     onSelectFilter: (state, action) => {
-      state.ticketsData = state.ticketsData.filter((el) =>
+      state.ticketsData = initialState.ticketsData.filter((el) =>
         state.filters.includes(el.stops)
       );
       return state;
