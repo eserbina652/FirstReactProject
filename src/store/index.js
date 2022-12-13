@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import ticketsSlice from "./reducers/tickets";
 
-export default configureStore = {
+export default configureStore({
   reducer: { tickets: ticketsSlice },
-};
+});
 
 /*
 store/index.js
