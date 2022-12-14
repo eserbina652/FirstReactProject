@@ -26,7 +26,7 @@ function App() {
 
   const onChangeValue = (str) => {
     setValue(str);
-    console.log(str);
+    console.log("str", str);
   };
   const addValueInPopup = (item) => {
     setPopupData(item);
@@ -46,7 +46,7 @@ function App() {
     }, 3000);
   };
 
-  console.log(filter);
+  console.log("filter", filter);
   return (
     <>
       {popupData && (
