@@ -39,3 +39,18 @@ const TicketsFilter = ({ onSetFilter, onClickAll }) => {
 };
 
 export default TicketsFilter;
+
+/*
+import React from "react";
+import "./checkbox.css";
+Импортируем useDispatch
+также ипортируем onResetFilter, onSetFilter
+все это с помощью деструктуризации
+
+Удаляем пропсы из TicketsFilter, а в теле функции
+создаем константу dispatch с помощью одного из
+импортированных методов, далее создаем метод onSelectFilter,
+который будет принимать filter и в теле метода с помощью dispatch
+сразуже используем его. По аналогии делаем фильтр onReset, но без аргументов
+Остальное без изменений
+ */
