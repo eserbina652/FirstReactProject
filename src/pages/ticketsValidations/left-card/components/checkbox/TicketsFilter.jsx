@@ -9,10 +9,10 @@ import {
 const TicketsFilter = () => {
   const dispatch = useDispatch();
   const onSelectFilter = (filter) => {
-    dispatch(onSelectFilter(filter));
+    dispatch(onSetFilter(filter));
   };
   const resetFilter = () => {
-    dispatch(resetFilter());
+    dispatch(onResetFilter());
   };
 
   return (
