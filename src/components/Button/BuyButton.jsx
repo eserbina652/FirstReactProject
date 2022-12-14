@@ -1,8 +1,6 @@
 import React from "react";
 import "./buyButton.css";
-// import { getCurrencySymbol, getPrise } from "../../utils/functionFromTicket.js";
 import { getPrise, getCurrencySymbol } from "../../utils/functionFromTicket.js";
-// import { getCurrencySymbol } from "../../utils/functionFromTicket.js";
 
 const BuyButton = ({ item, value, additionalStyle, onClick }) => {
   return (

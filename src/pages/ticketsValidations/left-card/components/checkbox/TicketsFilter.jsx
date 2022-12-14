@@ -10,9 +10,11 @@ const TicketsFilter = () => {
   const dispatch = useDispatch();
   const onSelectFilter = (filter) => {
     dispatch(onSetFilter(filter));
+    console.log("filter-checkBox", filter);
   };
   const onReset = () => {
     dispatch(onResetFilter());
+    console.log("checkBox", 1);
   };
 
   return (
