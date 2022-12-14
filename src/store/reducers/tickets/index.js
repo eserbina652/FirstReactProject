@@ -25,9 +25,9 @@ export const ticketsSlice = createSlice({
       return state;
     },
     onSelectFilter: (state, action) => {
-      state.ticketsData = initialState.ticketsData.filter((el) => {
-        state.filters.includes(el.stops);
-      });
+      state.ticketsData = initialState.ticketsData.filter((el) =>
+        state.filters.includes(el.stops)
+      );
       return state;
     },
     onResetFilter: (state, action) => {
