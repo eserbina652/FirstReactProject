@@ -30,7 +30,7 @@ export const ticketsSlice = createSlice({
       });
       return state;
     },
-    onResetFiter: (state, action) => {
+    onResetFilter: (state, action) => {
       return initialState;
     },
   },
