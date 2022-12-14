@@ -1,7 +1,20 @@
 import React from "react";
 import "./checkbox.css";
+import { useDispatch } from "react-redux";
+import {
+  onResetFilter,
+  onSetFilter,
+} from "../../../../../store/reducers/tickets";
 
-const TicketsFilter = ({ onSetFilter, onClickAll }) => {
+const TicketsFilter = () => {
+  const dispatch = useDispatch();
+  const onSelectFilter = (filter) => {
+    dispatch(onSelectFilter(filter));
+  };
+  const resetFilter = () => {
+    dispatch(resetFilter());
+  };
+
   return (
     <div>
       <div>

@@ -24,6 +24,10 @@ function App() {
     }
   }, [filter.length]);
 
+  const onChangeValue = (str) => {
+    setValue(str);
+    console.log(str);
+  };
   const addValueInPopup = (item) => {
     setPopupData(item);
   };
@@ -68,21 +72,3 @@ function App() {
 }
 
 export default App;
-
-/*
-App.js
-openSuccess={openSuccess}
-          closePopup={closePopup}
-          item={popupData}
-          addValueInPopup={addValueInPopup}
-        />
-      )}
-      {popupSuccess && <PopupSuccess closePopup={closePopup} />}
-      <div className="all-wrapper">
-        <LeftCard onChangeValue={onChangeValue} />
-        <TicketList
-          closePopup={closePopup}
-          addValueInPopup={addValueInPopup}
-          value={value}
-          ticketList={data}
- */
