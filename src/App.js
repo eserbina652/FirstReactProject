@@ -27,7 +27,7 @@ function App() {
     } else {
       dispatch(onResetFilter());
     }
-    console.log(filter.length);
+    console.log("filter.length", filter.length);
   }, [filter.length]);
 
   useEffect(() => {
@@ -58,7 +58,6 @@ function App() {
     }, 3000);
   };
 
-  console.log("filter", filter);
   return (
     <>
       {popupData && (
@@ -71,7 +70,7 @@ function App() {
       )}
       {popupSuccess && <PopupSuccess closePopup={closePopup} />}
       <div className="all-wrapper">
-        <LeftCard />
+        <LeftCard str={currency} />
         <TicketList
           closePopup={closePopup}
           addValueInPopup={addValueInPopup}
