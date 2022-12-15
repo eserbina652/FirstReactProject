@@ -4,6 +4,7 @@ import res from "../../../pages/ticketsValidations/right-card/response";
 const initialState = {
   ticketsData: res,
   filters: [],
+  currency: "",
 };
 
 export const ticketsSlice = createSlice({
@@ -33,9 +34,20 @@ export const ticketsSlice = createSlice({
     onResetFilter: (state, action) => {
       return initialState;
     },
+    onSetCurrency: (state, action) => {
+      state.currency = action.payload;
+      console.log("state.currency", state.currency);
+      console.log("action.payload", action.payload);
+      return state;
+    },
   },
 });
 
-export const { onSelect, onSetFilter, onSelectFilter, onResetFilter } =
-  ticketsSlice.actions;
+export const {
+  onSelect,
+  onSetFilter,
+  onSelectFilter,
+  onResetFilter,
+  onSetCurrency,
+} = ticketsSlice.actions;
 export default ticketsSlice.reducer;

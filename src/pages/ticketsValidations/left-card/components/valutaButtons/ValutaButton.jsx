@@ -1,8 +1,15 @@
 import React from "react";
 import "./valutaButtons.css";
 import SortButton from "../../../../../components/Button/SortButton";
+import { useDispatch } from "react-redux";
+import { onSetCurrency } from "../../../../../store/reducers/tickets";
 
-const ValutaButton = ({ onChangeValue }) => {
+const ValutaButton = () => {
+  const dispatch = useDispatch();
+  const setCurrency = (str) => {
+    dispatch(onSetCurrency(str));
+    console.log("str", str);
+  };
   return (
     <div>
       <div>
@@ -10,12 +17,12 @@ const ValutaButton = ({ onChangeValue }) => {
         <div className="buttons-wrapper">
           <SortButton
             onClick={() => {
-              onChangeValue("EUR");
+              setCurrency("EUR");
             }}
             title={"EUR"}
           />
-          <SortButton onClick={() => onChangeValue("UAH")} title={"UAH"} />
-          <SortButton onClick={() => onChangeValue("USD")} title={"USD"} />
+          <SortButton onClick={() => setCurrency("UAH")} title={"UAH"} />
+          <SortButton onClick={() => setCurrency("USD")} title={"USD"} />
         </div>
       </div>
     </div>

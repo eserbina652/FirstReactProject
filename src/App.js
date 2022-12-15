@@ -5,13 +5,18 @@ import React, { useEffect, useState } from "react";
 import Popup from "./pages/popup/Popup";
 import PopupSuccess from "./pages/successfulPopup/PopupSuccess";
 import { useDispatch, useSelector } from "react-redux";
-import { onResetFilter, onSelectFilter } from "./store/reducers/tickets";
+import {
+  onResetFilter,
+  onSelectFilter,
+  onSetCurrency,
+} from "./store/reducers/tickets";
 
 function App() {
   const data = useSelector((state) => state.tickets.ticketsData);
   const filter = useSelector((state) => state.tickets.filters);
   const dispatch = useDispatch();
 
+  const currency = useSelector((state) => state.tickets.currency);
   const [value, setValue] = useState("UAH");
   const [popupData, setPopupData] = useState(null);
   const [popupSuccess, setPopupSuccess] = useState(false);
@@ -22,13 +27,20 @@ function App() {
     } else {
       dispatch(onResetFilter());
     }
+    console.log(filter.length);
   }, [filter.length]);
 
-  const onChangeValue = (str) => {
-    setValue(str);
-    console.log("str", str);
-  };
+  useEffect(() => {
+    dispatch(onSetCurrency());
+    console.log("currency", currency);
+  }, [currency]);
+
+  // const onChangeValue = (str) => {
+  //   setValue(str);
+  //   console.log("str", str);
+  // };
   const addValueInPopup = (item) => {
+    console.log("item", item);
     setPopupData(item);
   };
   const closePopup = () => {
@@ -59,7 +71,7 @@ function App() {
       )}
       {popupSuccess && <PopupSuccess closePopup={closePopup} />}
       <div className="all-wrapper">
-        <LeftCard onChangeValue={onChangeValue} />
+        <LeftCard />
         <TicketList
           closePopup={closePopup}
           addValueInPopup={addValueInPopup}
