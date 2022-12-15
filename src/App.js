@@ -27,13 +27,13 @@ function App() {
     } else {
       dispatch(onResetFilter());
     }
-    console.log("filter.length", filter.length);
+    // console.log("filter.length", filter.length);
   }, [filter.length]);
 
-  useEffect(() => {
-    dispatch(onSetCurrency());
-    console.log("currency", currency);
-  }, [currency]);
+  // useEffect(() => {
+  //   dispatch(onSetCurrency());
+  //   console.log("currency", currency);
+  // }, [currency]);
 
   // const onChangeValue = (str) => {
   //   setValue(str);

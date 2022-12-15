@@ -4,7 +4,7 @@ import res from "../../../pages/ticketsValidations/right-card/response";
 const initialState = {
   ticketsData: res,
   filters: [],
-  currency: "",
+  currency: "UAH",
 };
 
 export const ticketsSlice = createSlice({
