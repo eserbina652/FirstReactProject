@@ -17,6 +17,7 @@ function App() {
   const dispatch = useDispatch();
 
   const currency = useSelector((state) => state.tickets.currency);
+  // const sort = useSelector(state => state.tickets.ticketsData)
   const [value, setValue] = useState("UAH");
   const [popupData, setPopupData] = useState(null);
   const [popupSuccess, setPopupSuccess] = useState(false);
@@ -39,9 +40,8 @@ function App() {
   //   setValue(str);
   //   console.log("str", str);
   // };
-  const addValueInPopup = (item) => {
-    console.log("item", item);
-    setPopupData(item);
+  const addValueInPopup = (currensy) => {
+    setPopupData(currensy);
   };
   const closePopup = () => {
     setPopupData(null);
@@ -70,7 +70,7 @@ function App() {
       )}
       {popupSuccess && <PopupSuccess closePopup={closePopup} />}
       <div className="all-wrapper">
-        <LeftCard str={currency} />
+        <LeftCard />
         <TicketList
           closePopup={closePopup}
           addValueInPopup={addValueInPopup}

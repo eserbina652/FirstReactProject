@@ -8,7 +8,7 @@ const PopupSuccess = ({ closePopup }) => {
     <div>
       <div className="popup-wrapper">
         <div className="popup-little-window">
-          <CloseButton closePopup={closePopup} />
+          <CloseButton closePopup={closePopup()} />
           <div
             style={{
               display: "flex",

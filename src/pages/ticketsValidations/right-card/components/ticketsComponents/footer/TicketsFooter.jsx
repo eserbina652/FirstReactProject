@@ -6,8 +6,12 @@ import {
   getCurrencySymbol,
   getPrise,
 } from "../../../../../../utils/functionFromTicket.js";
+import { onSetCurrency } from "../../../../../../store/reducers/tickets";
+import { useSelector } from "react-redux";
 
 const TicketsFooter = ({ addValueInPopup, item, value }) => {
+  const currency = useSelector((state) => state.tickets.currency);
+
   return (
     <div>
       <div className="tickets-footer">
@@ -18,10 +22,10 @@ const TicketsFooter = ({ addValueInPopup, item, value }) => {
         />
         <BuyButton
           onClick={() => {
-            addValueInPopup(item);
+            addValueInPopup(currency);
           }}
-          getPrise={getPrise(value, item)}
-          getCurrencySymbol={getCurrencySymbol(item)}
+          getPrise={getPrise(value, currency)}
+          getCurrencySymbol={getCurrencySymbol(currency)}
           addValueInPopup={addValueInPopup}
           item={item}
           value={value}
