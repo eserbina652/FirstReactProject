@@ -8,7 +8,7 @@ const TicketList = ({ ticketList, value, addValueInPopup }) => {
         {ticketList.map((e, index) => (
           <Ticket
             addValueInPopup={addValueInPopup}
-            value={value}
+            // value={value}
             item={e}
             key={index.toString()}
           />

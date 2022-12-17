@@ -10,7 +10,7 @@ const Ticket = ({ item, value, addValueInPopup }) => {
         <TicketsHeader item={item} />
         <TicketsFooter
           item={item}
-          value={value}
+          // value={value}
           addValueInPopup={addValueInPopup}
         />
       </div>

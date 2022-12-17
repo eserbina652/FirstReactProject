@@ -16,7 +16,7 @@ const ValutaButton = () => {
         <h3 className="left-card-header">Currency</h3>
         <div className="buttons-wrapper">
           <SortButton
-            onClick={() => {
+            onChange={() => {
               setCurrency("EUR");
             }}
             title={"EUR"}

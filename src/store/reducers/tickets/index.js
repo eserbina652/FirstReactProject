@@ -43,6 +43,13 @@ export const ticketsSlice = createSlice({
   },
 });
 
+export const popupSlice = createSlice({
+  name: "popups",
+  initialState: initialState,
+  reducers: {
+    onSetData: (state, action) => {},
+  },
+});
 export const {
   onSelect,
   onSetFilter,
