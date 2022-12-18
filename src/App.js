@@ -5,11 +5,7 @@ import React, { useEffect, useState } from "react";
 import Popup from "./pages/popup/Popup";
 import PopupSuccess from "./pages/successfulPopup/PopupSuccess";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  onResetFilter,
-  onSelectFilter,
-  onSetCurrency,
-} from "./store/reducers/tickets";
+import { onResetFilter, onSelectFilter } from "./store/reducers/tickets";
 
 function App() {
   const data = useSelector((state) => state.tickets.ticketsData);
