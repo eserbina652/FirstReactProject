@@ -11,11 +11,13 @@ function App() {
   const data = useSelector((state) => state.tickets.ticketsData);
   const filter = useSelector((state) => state.tickets.filters);
   const dispatch = useDispatch();
-
+  console.log(data);
   const currency = useSelector((state) => state.tickets.currency);
-  const [value, setValue] = useState("UAH");
-  const [popupData, setPopupData] = useState(null);
-  const [popupSuccess, setPopupSuccess] = useState(false);
+  const popupItem = useSelector((state) => state.popups?.item);
+  const isOpenSuccess = useSelector((state) => state.popups?.isOpenSuccess);
+  // const [value, setValue] = useState("UAH");
+  // const [popupData, setPopupData] = useState(null);
+  // const [popupSuccess, setPopupSuccess] = useState(false);
 
   useEffect(() => {
     if (filter.length) {
@@ -25,7 +27,7 @@ function App() {
     }
     // console.log("filter.length", filter.length);
   }, [filter.length]);
-
+  console.log(popupItem);
   // useEffect(() => {
   //   dispatch(onSetCurrency());
   //   console.log("currency", currency);
@@ -35,44 +37,32 @@ function App() {
   //   setValue(str);
   //   console.log("str", str);
   // };
-  const addValueInPopup = (item) => {
-    console.log("item", item);
-    setPopupData(item);
-  };
-  const closePopup = () => {
-    setPopupData(null);
-    setPopupSuccess(false);
-  };
-
-  const openSuccess = () => {
-    if (popupData) {
-      setPopupData(null);
-      setPopupSuccess(true);
-    }
-    setTimeout(() => {
-      setPopupSuccess(false);
-    }, 3000);
-  };
+  // const addValueInPopup = (item) => {
+  //   console.log("item", item);
+  //   setPopupData(item);
+  // };
+  // const closePopup = () => {
+  //   setPopupData(null);
+  //   setPopupSuccess(false);
+  // };
+  //
+  // const openSuccess = () => {
+  //   if (popupData) {
+  //     setPopupData(null);
+  //     setPopupSuccess(true);
+  //   }
+  //   setTimeout(() => {
+  //     setPopupSuccess(false);
+  //   }, 3000);
+  // };
 
   return (
     <>
-      {popupData && (
-        <Popup
-          openSuccess={openSuccess}
-          closePopup={closePopup}
-          item={popupData}
-          addValueInPopup={addValueInPopup}
-        />
-      )}
-      {popupSuccess && <PopupSuccess closePopup={closePopup} />}
+      {popupItem && <Popup />}
+      {isOpenSuccess && <PopupSuccess />}
       <div className="all-wrapper">
         <LeftCard str={currency} />
-        <TicketList
-          closePopup={closePopup}
-          addValueInPopup={addValueInPopup}
-          value={value}
-          ticketList={data}
-        />
+        <TicketList ticketList={data} />
       </div>
     </>
   );

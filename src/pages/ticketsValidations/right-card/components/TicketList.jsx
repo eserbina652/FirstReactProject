@@ -2,6 +2,7 @@ import React from "react";
 import Ticket from "./Ticket";
 
 const TicketList = ({ ticketList, value, addValueInPopup }) => {
+  console.log("ticketList", ticketList);
   return (
     <>
       <div>

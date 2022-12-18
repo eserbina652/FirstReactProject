@@ -6,8 +6,10 @@ import {
   getCurrencySymbol,
   getPrise,
 } from "../../../../../../utils/functionFromTicket.js";
+import { useDispatch, useSelector } from "react-redux";
+import { onOpen } from "../../../../../../store/reducers/popups";
 
-const TicketsFooter = ({ addValueInPopup, item, value }) => {
+const TicketsFooter = ({ item, value }) => {
   return (
     <div>
       <div className="tickets-footer">
@@ -17,12 +19,9 @@ const TicketsFooter = ({ addValueInPopup, item, value }) => {
           alt="Эта дичь не отображается"
         />
         <BuyButton
-          onClick={() => {
-            addValueInPopup(item);
-          }}
-          getPrise={getPrise(value, item)}
-          getCurrencySymbol={getCurrencySymbol(item)}
-          addValueInPopup={addValueInPopup}
+          //ERROR
+          // getPrise={getPrise(value, item)}
+          // getCurrencySymbol={getCurrencySymbol(item)}
           item={item}
           value={value}
         />

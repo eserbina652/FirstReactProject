@@ -1,5 +1,6 @@
 export const getCurrencySymbol = (value) => {
   if (!value) {
+    console.log(value);
     return "₴";
   }
   switch (value) {

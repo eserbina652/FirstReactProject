@@ -4,37 +4,19 @@ import Error from "../../../errors/Error";
 import { Formik } from "formik";
 import { formValidation } from "../../../validations/FormValidations";
 import { getCurrencySymbol, getPrise } from "../../../utils/functionFromTicket";
+import { useDispatch, useSelector } from "react-redux";
+import { onClose, onOpenSuccess } from "../../../store/reducers/popups";
 
-const PopupForm = ({ item, value, addValueInPopup, openSuccess }) => {
-  // const email = useInput("", { isEmpty: true, minLength: 10, isEmail: true });
-  // const name = useInput("", { isEmpty: true, minLength: 2, isName: true });
-  // const surname = useInput("", {
-  //   isEmpty: true,
-  //   minLength: 2,
-  //   isSurname: true,
-  // });
-  // const phone = useInput("", {
-  //   isEmpty: true,
-  //   minLength: 9,
-  //   isPhone: true,
-  // });
-  // const passport = useInput("", {
-  //   isEmpty: true,
-  //   isPassport: true,
-  // });
-  // const isDesaible =
-  //   !!email.error?.emailError &&
-  //   // !!email.isEmpty &&
-  //   !!name.error?.nameError &&
-  //   // !!name.isEmpty &&
-  //   !!surname.error?.surnameError &&
-  //   // !!surname.isEmpty &&
-  //   !!phone.error?.phoneError &&
-  //   // !!phone.isEmpty &&
-  //   !!passport.error?.passportError;
-  // // !!passport.isEmpty;
-  //
-  // console.log("isDesaible", isDesaible);
+const PopupForm = ({ value }) => {
+  const dispatch = useDispatch();
+  const item = useSelector((state) => state.popups?.item);
+  const closePopup = () => {
+    dispatch(onClose());
+  };
+
+  const openSuccess = () => {
+    dispatch(onOpenSuccess());
+  };
   return (
     <div className="popup-middle">
       <Formik
@@ -46,8 +28,8 @@ const PopupForm = ({ item, value, addValueInPopup, openSuccess }) => {
           passport: "",
         }}
         validate={formValidation}
-        onSubmit={(value, { setSubmitting }) => {
-          addValueInPopup(null);
+        onSubmit={() => {
+          closePopup();
           openSuccess();
           // handleAddtoLocalStorag("2", values);
         }}
