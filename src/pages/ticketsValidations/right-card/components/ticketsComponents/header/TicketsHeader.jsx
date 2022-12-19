@@ -4,8 +4,6 @@ import "./header.css";
 import { useSelector } from "react-redux";
 
 const TicketsHeader = ({ item }) => {
-  console.log("TicketsHeader", item);
-  // const item = useSelector((state) => state.popups.item);
   return (
     <div>
       <div className="tickets-main">

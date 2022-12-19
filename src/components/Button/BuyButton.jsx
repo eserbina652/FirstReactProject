@@ -8,14 +8,15 @@ const BuyButton = ({ item, additionalStyle }) => {
   const currency = useSelector((state) => state.tickets.currency);
   const dispatch = useDispatch();
 
-  const openPopup = () => {
-    dispatch(onOpen());
+  const openPopup = (item) => {
+    console.log("popupItem", item);
+    dispatch(onOpen(item));
   };
   return (
     <div>
       <button
         onClick={() => {
-          openPopup();
+          openPopup(item);
         }}
         className="button-for-buy-a-ticket"
         id={additionalStyle}

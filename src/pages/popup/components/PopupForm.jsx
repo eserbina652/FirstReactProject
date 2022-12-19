@@ -9,7 +9,7 @@ import { onClose, onOpenSuccess } from "../../../store/reducers/popups";
 
 const PopupForm = ({ value }) => {
   const dispatch = useDispatch();
-  const item = useSelector((state) => state.popups?.item);
+  const item = useSelector((state) => state.popups.item);
   const closePopup = () => {
     dispatch(onClose());
   };

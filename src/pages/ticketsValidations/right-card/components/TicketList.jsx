@@ -1,18 +1,15 @@
 import React from "react";
 import Ticket from "./Ticket";
+import { useSelector } from "react-redux";
 
-const TicketList = ({ ticketList, value, addValueInPopup }) => {
-  console.log("ticketList", ticketList);
+const TicketList = () => {
+  const data = useSelector((state) => state.tickets.ticketsData);
+
   return (
     <>
       <div>
-        {ticketList.map((e, index) => (
-          <Ticket
-            addValueInPopup={addValueInPopup}
-            value={value}
-            item={e}
-            key={index.toString()}
-          />
+        {data.map((e, index) => (
+          <Ticket item={e} key={index.toString()} />
         ))}
       </div>
     </>

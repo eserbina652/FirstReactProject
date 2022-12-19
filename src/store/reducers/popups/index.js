@@ -11,8 +11,10 @@ export const popupSlice = createSlice({
   initialState: initialState,
   reducers: {
     onOpen: (state, action) => {
-      state.isOpen = true;
+      console.log("action.payload", action.payload);
+      console.log("state.item", state.item);
       state.item = action.payload;
+      state.isOpen = true;
       return state;
     },
     onClose: (state, action) => {

@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import ticketsSlice from "./reducers/tickets";
-import popups from "./reducers/popups";
+import popupSlice from "./reducers/popups";
 
 export default configureStore({
-  reducer: { tickets: ticketsSlice, popups: popups },
+  reducer: { tickets: ticketsSlice, popups: popupSlice },
 });
 
 /*

@@ -9,7 +9,9 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { onOpen } from "../../../../../../store/reducers/popups";
 
-const TicketsFooter = ({ item, value }) => {
+const TicketsFooter = ({ item }) => {
+  const currency = useSelector((state) => state.tickets.currency);
+
   return (
     <div>
       <div className="tickets-footer">
@@ -20,10 +22,7 @@ const TicketsFooter = ({ item, value }) => {
         />
         <BuyButton
           //ERROR
-          getPrise={getPrise(item, value)}
-          getCurrencySymbol={getCurrencySymbol(item)}
           item={item}
-          value={value}
         />
       </div>
     </div>

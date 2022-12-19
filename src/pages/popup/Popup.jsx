@@ -3,10 +3,12 @@ import "./popup.css";
 import TicketsHeader from "../ticketsValidations/right-card/components/ticketsComponents/header/TicketsHeader";
 import PopupForm from "./components/PopupForm";
 import CloseButton from "../../components/Button/CloseButton";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { onClose } from "../../store/reducers/popups";
+import ticketsHeader from "../ticketsValidations/right-card/components/ticketsComponents/header/TicketsHeader";
 
 const Popup = () => {
+  const popupItem = useSelector((state) => state.popups.item);
   const dispatch = useDispatch();
   const closePopup = () => {
     dispatch(onClose());
@@ -18,7 +20,7 @@ const Popup = () => {
         <div className="popup-header">
           <h3 className="header-title">Your ticket</h3>
         </div>
-        <TicketsHeader />
+        <TicketsHeader item={popupItem} />
         <h4 className="form-title">
           Please fill out the form, if you want to buy a ticket
         </h4>

@@ -11,10 +11,9 @@ function App() {
   const data = useSelector((state) => state.tickets.ticketsData);
   const filter = useSelector((state) => state.tickets.filters);
   const dispatch = useDispatch();
-  console.log(data);
   const currency = useSelector((state) => state.tickets.currency);
-  const popupItem = useSelector((state) => state.popups?.item);
-  const isOpenSuccess = useSelector((state) => state.popups?.isOpenSuccess);
+  const popupItem = useSelector((state) => state.popups.item);
+  const isOpenSuccess = useSelector((state) => state.popups.isOpenSuccess);
   // const [value, setValue] = useState("UAH");
   // const [popupData, setPopupData] = useState(null);
   // const [popupSuccess, setPopupSuccess] = useState(false);
@@ -27,7 +26,6 @@ function App() {
     }
     // console.log("filter.length", filter.length);
   }, [filter.length]);
-  console.log(popupItem);
   // useEffect(() => {
   //   dispatch(onSetCurrency());
   //   console.log("currency", currency);
@@ -55,14 +53,16 @@ function App() {
   //     setPopupSuccess(false);
   //   }, 3000);
   // };
-
+  console.log("App/js/popupItem", popupItem);
   return (
     <>
       {popupItem && <Popup />}
       {isOpenSuccess && <PopupSuccess />}
       <div className="all-wrapper">
         <LeftCard str={currency} />
-        <TicketList ticketList={data} />
+        <TicketList
+        // ticketList={data} value={currency}
+        />
       </div>
     </>
   );

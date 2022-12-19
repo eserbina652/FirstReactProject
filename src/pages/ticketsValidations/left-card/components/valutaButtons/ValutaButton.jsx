@@ -8,7 +8,6 @@ const ValutaButton = () => {
   const dispatch = useDispatch();
   const setCurrency = (str) => {
     dispatch(onSetCurrency(str));
-    console.log("str", str);
   };
   return (
     <div>
