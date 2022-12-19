@@ -1,6 +1,6 @@
 export const getCurrencySymbol = (value) => {
+  console.log("value", value);
   if (!value) {
-    console.log(value);
     return "₴";
   }
   switch (value) {
@@ -16,6 +16,8 @@ export const getCurrencySymbol = (value) => {
 };
 
 export const getPrise = (item, value) => {
+  console.log("value", value);
+  console.log("item", item);
   if (!value) {
     return item.price;
   }

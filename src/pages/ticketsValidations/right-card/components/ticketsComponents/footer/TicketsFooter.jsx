@@ -20,8 +20,8 @@ const TicketsFooter = ({ item, value }) => {
         />
         <BuyButton
           //ERROR
-          // getPrise={getPrise(value, item)}
-          // getCurrencySymbol={getCurrencySymbol(item)}
+          getPrise={getPrise(item, value)}
+          getCurrencySymbol={getCurrencySymbol(item)}
           item={item}
           value={value}
         />
