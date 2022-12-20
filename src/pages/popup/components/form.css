@@ -15,3 +15,7 @@ input[type=text], input[type=number], input[type=email] {
     border: none;
     border-bottom: 1px solid darkgrey;
 }
+
+.name-input, .surname-input, .email-input, .phone-input, .passport-input {
+    display: flex;
+}

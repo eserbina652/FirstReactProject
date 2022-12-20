@@ -5,7 +5,3 @@ import popupSlice from "./reducers/popups";
 export default configureStore({
   reducer: { tickets: ticketsSlice, popups: popupSlice },
 });
-
-/*
-configureStore - это функция которая позволяет использовать множество reducerов
-*/

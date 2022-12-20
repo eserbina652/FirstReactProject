@@ -1,9 +1,9 @@
 import React from "react";
-
 import { greenCircle } from "../../assets";
 import CloseButton from "../../components/Button/CloseButton";
 import { useDispatch } from "react-redux";
-import { onClose, onCloseSuccess } from "../../store/reducers/popups";
+import { onCloseSuccess } from "../../store/reducers/popups";
+import "./successPopup.css";
 
 const PopupSuccess = () => {
   const dispatch = useDispatch();
@@ -15,33 +15,10 @@ const PopupSuccess = () => {
       <div className="popup-wrapper">
         <div className="popup-little-window">
           <CloseButton onClick={() => closePopupSuccess()} />
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-            }}
-          >
-            <img
-              style={{
-                width: "20vw",
-                margin: "3vw 0 0 0",
-              }}
-              src={greenCircle}
-              alt=""
-            />
+          <div className="middleSuccess">
+            <img className="successPicture" src={greenCircle} alt="success" />
           </div>
-
-          <p
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              fontSize: "3rem",
-            }}
-          >
-            Success!
-          </p>
+          <p className="underPictureText">Success!</p>
         </div>
       </div>
     </div>

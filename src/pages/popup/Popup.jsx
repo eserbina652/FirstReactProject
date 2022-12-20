@@ -5,7 +5,6 @@ import PopupForm from "./components/PopupForm";
 import CloseButton from "../../components/Button/CloseButton";
 import { useDispatch, useSelector } from "react-redux";
 import { onClose } from "../../store/reducers/popups";
-import ticketsHeader from "../ticketsValidations/right-card/components/ticketsComponents/header/TicketsHeader";
 
 const Popup = () => {
   const popupItem = useSelector((state) => state.popups.item);

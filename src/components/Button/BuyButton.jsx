@@ -9,7 +9,6 @@ const BuyButton = ({ item, additionalStyle }) => {
   const dispatch = useDispatch();
 
   const openPopup = (item) => {
-    console.log("popupItem", item);
     dispatch(onOpen(item));
   };
   return (

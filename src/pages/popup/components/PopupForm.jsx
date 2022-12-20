@@ -11,9 +11,10 @@ import {
   onOpenSuccess,
 } from "../../../store/reducers/popups";
 
-const PopupForm = ({ value }) => {
+const PopupForm = () => {
   const dispatch = useDispatch();
   const item = useSelector((state) => state.popups.item);
+  const currency = useSelector((state) => state.popups.currency);
   const closePopup = () => {
     dispatch(onClose());
   };
@@ -42,7 +43,6 @@ const PopupForm = ({ value }) => {
           closePopup();
           openSuccess();
           closeSuccess();
-          // handleAddtoLocalStorag("2", values);
         }}
       >
         {({
@@ -53,10 +53,9 @@ const PopupForm = ({ value }) => {
           handleBlur,
           handleSubmit,
           isSubmitting,
-          /*and other goodies*/
         }) => (
           <form className="popup-form" onSubmit={handleSubmit}>
-            <div className="name-input" style={{ display: "flex" }}>
+            <div className="name-input">
               <input
                 type="text"
                 onBlur={handleBlur}
@@ -68,7 +67,7 @@ const PopupForm = ({ value }) => {
               />
               {errors?.name && <Error error={errors.name} />}
             </div>
-            <div className="surname-input" style={{ display: "flex" }}>
+            <div className="surname-input">
               <input
                 type="text"
                 onBlur={handleBlur}
@@ -80,7 +79,7 @@ const PopupForm = ({ value }) => {
               />
               {errors?.surname && <Error error={errors.surname} />}
             </div>
-            <div className="email-input" style={{ display: "flex" }}>
+            <div className="email-input">
               <input
                 type="text"
                 onBlur={handleBlur}
@@ -92,7 +91,7 @@ const PopupForm = ({ value }) => {
               />
               {errors?.email && <Error error={errors.email} />}
             </div>
-            <div className="phone-input" style={{ display: "flex" }}>
+            <div className="phone-input">
               <input
                 type="text"
                 onBlur={handleBlur}
@@ -104,7 +103,7 @@ const PopupForm = ({ value }) => {
               />
               {errors?.phone && <Error error={errors.phone} />}
             </div>
-            <div className="passport-input" style={{ display: "flex" }}>
+            <div className="passport-input">
               <input
                 type="text"
                 onBlur={handleBlur}
@@ -124,7 +123,7 @@ const PopupForm = ({ value }) => {
               disabled={isSubmitting}
               id="popup-button"
             >
-              Buy for {getPrise(item, value)} {getCurrencySymbol(value)}
+              Buy for {getPrise(item, currency)} {getCurrencySymbol(currency)}
             </button>
           </form>
         )}

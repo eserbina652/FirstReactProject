@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import res from "../../../pages/ticketsValidations/right-card/response";
-import { logDOM } from "@testing-library/react";
 
 const initialState = {
   ticketsData: res,

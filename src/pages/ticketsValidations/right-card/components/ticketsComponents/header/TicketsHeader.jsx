@@ -1,7 +1,6 @@
 import React from "react";
 import { greyPlane } from "../../../../../../assets";
 import "./header.css";
-import { useSelector } from "react-redux";
 
 const TicketsHeader = ({ item }) => {
   return (
@@ -18,8 +17,11 @@ const TicketsHeader = ({ item }) => {
         <div className="middle">
           <p>{item.stops} transfers</p>
           <div className="little-line"></div>
-          {/*<div className="right-card-middle-picture"></div>*/}
-          <img className="right-card-middle-picture" src={greyPlane} alt="" />
+          <img
+            className="right-card-middle-picture"
+            src={greyPlane}
+            alt="plane"
+          />
         </div>
         <div className="right-side">
           <p className="tickets-time">{item.departure_time}</p>

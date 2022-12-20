@@ -1,7 +1,5 @@
 import React from "react";
 import "./closeButton.css";
-import { useDispatch } from "react-redux";
-import { onClose, onCloseSuccess } from "../../store/reducers/popups";
 
 const CloseButton = ({ onClick }) => {
   return (
