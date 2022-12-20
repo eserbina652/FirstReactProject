@@ -36,10 +36,9 @@ export const ticketsSlice = createSlice({
       return state;
     },
     onResetFilter: (state, action) => {
-      console.log("ALL state", state);
-      console.log("ALL action.payload", action.payload);
-      console.log("ALL initialState", initialState);
-      return initialState;
+      state.filters = [];
+      state.ticketsData = initialState.ticketsData;
+      return state;
     },
     onSetCurrency: (state, action) => {
       state.currency = action.payload;

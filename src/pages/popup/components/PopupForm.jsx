@@ -116,7 +116,6 @@ const PopupForm = () => {
               {errors?.passport && <Error error={errors.passport} />}
             </div>
             <button
-              // onClick={() => openSuccess()}
               onSubmit={handleSubmit}
               className="button-for-buy-a-ticket"
               type="submit"
