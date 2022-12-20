@@ -17,6 +17,8 @@
     width: 50%;
     height: 70%;
     background-color: white;
+    border: 0.10rem solid black;
+    border-radius: 2vh;
 }
 
 .popup-header {

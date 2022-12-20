@@ -24,7 +24,6 @@ export const popupSlice = createSlice({
     },
     onOpenSuccess: (state, action) => {
       state.isOpenSuccess = true;
-      setTimeout(() => (state.isOpenSuccess = false), 3000);
       return state;
     },
     onCloseSuccess: (state, action) => {

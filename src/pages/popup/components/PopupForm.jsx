@@ -5,7 +5,11 @@ import { Formik } from "formik";
 import { formValidation } from "../../../validations/FormValidations";
 import { getCurrencySymbol, getPrise } from "../../../utils/functionFromTicket";
 import { useDispatch, useSelector } from "react-redux";
-import { onClose, onOpenSuccess } from "../../../store/reducers/popups";
+import {
+  onClose,
+  onCloseSuccess,
+  onOpenSuccess,
+} from "../../../store/reducers/popups";
 
 const PopupForm = ({ value }) => {
   const dispatch = useDispatch();
@@ -16,6 +20,12 @@ const PopupForm = ({ value }) => {
 
   const openSuccess = () => {
     dispatch(onOpenSuccess());
+  };
+
+  const closeSuccess = () => {
+    setTimeout(() => {
+      dispatch(onCloseSuccess());
+    }, 3000);
   };
   return (
     <div className="popup-middle">
@@ -31,6 +41,7 @@ const PopupForm = ({ value }) => {
         onSubmit={() => {
           closePopup();
           openSuccess();
+          closeSuccess();
           // handleAddtoLocalStorag("2", values);
         }}
       >
@@ -106,6 +117,7 @@ const PopupForm = ({ value }) => {
               {errors?.passport && <Error error={errors.passport} />}
             </div>
             <button
+              // onClick={() => openSuccess()}
               onSubmit={handleSubmit}
               className="button-for-buy-a-ticket"
               type="submit"
