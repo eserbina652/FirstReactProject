@@ -3,11 +3,12 @@ import "./valutaButtons.css";
 import SortButton from "../../../../../components/Button/SortButton";
 import { useDispatch } from "react-redux";
 import { onSetCurrency } from "../../../../../store/reducers/tickets";
+import { actionOnSetCurrency } from "../../../../../store/vanilaRedux/tikets/actions/tiketsActions";
 
 const ValutaButton = () => {
   const dispatch = useDispatch();
   const setCurrency = (str) => {
-    dispatch(onSetCurrency(str));
+    dispatch(actionOnSetCurrency(str));
     console.log("str", str);
   };
   return (
@@ -16,7 +17,7 @@ const ValutaButton = () => {
         <h3 className="left-card-header">Currency</h3>
         <div className="buttons-wrapper">
           <SortButton
-            onChange={() => {
+            onClick={() => {
               setCurrency("EUR");
             }}
             title={"EUR"}

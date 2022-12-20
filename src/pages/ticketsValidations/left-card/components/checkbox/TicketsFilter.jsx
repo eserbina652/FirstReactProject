@@ -7,13 +7,13 @@ import {
 } from "../../../../../store/reducers/tickets";
 
 const TicketsFilter = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const onSelectFilter = (filter) => {
-    dispatch(onSetFilter(filter));
+    // dispatch(onSetFilter(filter));
     console.log("filter-checkBox", filter);
   };
   const onReset = () => {
-    dispatch(onResetFilter());
+    // dispatch(onResetFilter());
     console.log("checkBox", 1);
   };
 

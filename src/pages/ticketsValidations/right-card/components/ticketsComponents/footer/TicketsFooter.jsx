@@ -12,10 +12,10 @@ const TicketsFooter = ({ addValueInPopup, item, value }) => {
   const dispatch = useDispatch();
 
   const changeSymbol = (item) => {
-    dispatch(onChangeSymbol(item));
+    // dispatch(onChangeSymbol(item));
   };
   const resetSymbol = () => {
-    dispatch(onResetSymbol());
+    // dispatch(onResetSymbol());
   };
   return (
     <div>
@@ -29,8 +29,8 @@ const TicketsFooter = ({ addValueInPopup, item, value }) => {
           onClick={() => {
             addValueInPopup(item);
           }}
-          getPrise={getPrise(value, item)}
-          getCurrencySymbol={changeSymbol(item)}
+          // getPrise={getPrise(value, item)}
+          // getCurrencySymbol={changeSymbol(item)}
           addValueInPopup={addValueInPopup}
           item={item}
           value={value}

@@ -4,7 +4,7 @@ import { getPrise, getCurrencySymbol } from "../../utils/functionFromTicket.js";
 import { useSelector } from "react-redux";
 
 const BuyButton = ({ item, additionalStyle, onClick }) => {
-  const currency = useSelector((state) => state.tickets.currency);
+  const currency = useSelector((state) => state.currency);
   return (
     <div>
       <button

@@ -36,8 +36,6 @@ export const ticketsSlice = createSlice({
     },
     onSetCurrency: (state, action) => {
       state.currency = action.payload;
-      console.log("state.currency", state.currency);
-      console.log("action.payload", action.payload);
       return state;
     },
   },
