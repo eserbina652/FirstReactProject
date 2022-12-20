@@ -1,6 +1,6 @@
 import { ON_SELECT, ON_SET_CURRENCY, ON_SORT } from "../types/tiketsTypes";
 
-export const actionOnSort = (data) => ({
+export const actionOnSort = () => ({
   type: ON_SORT,
 });
 
