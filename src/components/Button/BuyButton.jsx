@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { onOpen } from "../../store/reducers/popups";
 
 const BuyButton = ({ item }) => {
-  const currency = useSelector((state) => state.tickets.currency);
+  const currency = useSelector((state) => state.currency);
   const dispatch = useDispatch();
 
   const openPopup = (item) => {

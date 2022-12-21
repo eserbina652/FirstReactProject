@@ -3,15 +3,12 @@ import Ticket from "./Ticket";
 import { useSelector } from "react-redux";
 
 const TicketList = ({ ticketList, value }) => {
+  console.log("ticketList", ticketList);
   return (
     <>
       <div>
         {ticketList.map((e, index) => (
-          <Ticket
-            item={e}
-            // value={value}
-            key={index.toString()}
-          />
+          <Ticket item={e} value={value} key={index.toString()} />
         ))}
       </div>
     </>
