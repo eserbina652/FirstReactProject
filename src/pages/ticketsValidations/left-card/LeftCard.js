@@ -47,3 +47,7 @@ const LeftCard = () => {
 
 export default LeftCard;
  */
+
+/*
+
+ */
