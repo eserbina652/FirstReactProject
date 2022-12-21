@@ -3,26 +3,47 @@ import ValutaButton from "./components/valutaButtons/ValutaButton";
 import TicketsFilter from "./components/checkbox/TicketsFilter";
 import "./leftcard.css";
 import SortButton from "../../../components/Button/SortButton";
-import { useDispatch, useSelector } from "react-redux";
-import { onSelect } from "../../../store/reducers/tickets";
+import { useDispatch } from "react-redux";
+import { actionOnSort } from "../../../store/vanillaRedux/tickets/actions/ticketsActions";
 
 const LeftCard = () => {
-  const ticketsData = useSelector((state) => state.tickets.ticketsData);
   const dispatch = useDispatch();
-  const onSort = (data) => {
-    dispatch(onSelect(data));
+  const onSort = () => {
+    dispatch(actionOnSort());
   };
   return (
     <div className="left-card-wrapper">
       <ValutaButton />
       <TicketsFilter />
-      <SortButton
-        onClick={() => onSort(ticketsData)}
-        title={"Sort"}
-        styles={"_sortButton"}
-      />
+      <SortButton onClick={onSort} title={"Sort"} styles={"_sortButton"} />
     </div>
   );
 };
 
 export default LeftCard;
+/*
+import React from "react";
+import ValutaButton from "./components/valutaButtons/ValutaButton";
+import TicketsFilter from "./components/checkbox/TicketsFilter";
+import "./leftcard.css";
+import SortButton from "../../../components/Button/SortButton";
+import { actionOnSort } from "../../../store/vanilaRedux/tikets/actions/tiketsActions";
+import { useDispatch } from "react-redux";
+
+const LeftCard = () => {
+  const dispatch = useDispatch();
+  const onSort = () => {
+    console.log("zdes");
+    dispatch(actionOnSort());
+  };
+  return (
+    <div className="left-card-wrapper">
+      <ValutaButton />
+      <TicketsFilter />
+      <SortButton title={"Sort"} styles={"_sortButton"} onClick={onSort} />
+    </div>
+  );
+};
+
+export default LeftCard;
+ */
