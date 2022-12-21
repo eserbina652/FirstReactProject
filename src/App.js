@@ -8,27 +8,28 @@ import { useDispatch, useSelector } from "react-redux";
 import { onResetFilter, onSelectFilter } from "./store/reducers/tickets";
 
 function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
+  const data = useSelector((state) => state.ticketsData);
+  const currency = useSelector((state) => state.currency);
+  // const filter = useSelector((state) => state.tickets.filters);
+  // const popupItem = useSelector((state) => state.popups.item);
+  // const isOpenSuccess = useSelector((state) => state.popups.isOpenSuccess);
 
-  const filter = useSelector((state) => state.tickets.filters);
-  const popupItem = useSelector((state) => state.popups.item);
-  const isOpenSuccess = useSelector((state) => state.popups.isOpenSuccess);
-
-  useEffect(() => {
-    if (filter.length) {
-      dispatch(onSelectFilter());
-    } else {
-      dispatch(onResetFilter());
-    }
-  }, [filter.length]);
+  // useEffect(() => {
+  //   if (filter.length) {
+  //     dispatch(onSelectFilter());
+  //   } else {
+  //     dispatch(onResetFilter());
+  //   }
+  // }, [filter.length]);
 
   return (
     <>
-      {popupItem && <Popup />}
-      {isOpenSuccess && <PopupSuccess />}
+      {/*{popupItem && <Popup />}*/}
+      {/*{isOpenSuccess && <PopupSuccess />}*/}
       <div className="all-wrapper">
-        <LeftCard />
-        <TicketList />
+        <LeftCard str={currency} />
+        <TicketList value={currency} ticketList={data} />
       </div>
     </>
   );
