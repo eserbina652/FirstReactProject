@@ -1,4 +1,4 @@
-import { ON_SELECT, ON_SET_CURRENCY, ON_SORT } from "../types/ticketsTypes";
+import { ON_SET_CURRENCY, ON_SORT } from "../types/ticketsTypes";
 import res from "../../../../pages/ticketsValidations/right-card/response";
 
 const initialState = {
@@ -9,7 +9,6 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case ON_SORT:
-      console.log("action", action);
       const temp = [...state.ticketsData];
       return {
         ...state,
@@ -17,7 +16,7 @@ export default (state = initialState, action) => {
       };
     case ON_SET_CURRENCY:
       console.log("currency", action);
-      return { ...state, currency: action.currency };
+      return { ...state, currency: action.currency }; //action.payload
     default:
       return state;
   }
