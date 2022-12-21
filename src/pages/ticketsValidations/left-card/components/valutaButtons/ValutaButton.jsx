@@ -2,7 +2,6 @@ import React from "react";
 import "./valutaButtons.css";
 import SortButton from "../../../../../components/Button/SortButton";
 import { useDispatch } from "react-redux";
-import { onSetCurrency } from "../../../../../store/reducers/tickets";
 import { actionOnSetCurrency } from "../../../../../store/vanilaRedux/tikets/actions/tiketsActions";
 
 const ValutaButton = () => {
