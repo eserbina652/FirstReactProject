@@ -5,13 +5,13 @@ export const store = createStore(tiketsReducer);
 
 /*
 index.js/vanillaRedux
-In directory store I mast to create the file index.js and the directory vanillaRedux
+In directory store I must create the file index.js and the directory vanillaRedux
 with directory tickets and next directories ito it:
 actions - this directory will include a file ticketsActions.js,
 reducers - this directory will include a file ticketsReducer.js,
 types - wil include a file ticketsTypes.js.
 
-In index file mast be next: exports store element, which I should to create
+In index file must be next: exports store element, which I should to create
 with createStore function in arguments which, I'll put a ticketsReducer, file
 from another directory
 or
