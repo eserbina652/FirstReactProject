@@ -1,6 +1,6 @@
-export const ON_SELECT = "ON_SELECT";
-// export const ON_SETFILTER = "ON_SETFILTER";
-// export const ON_SELECRFILTER = "ON_SELECRFILTER";
-// export const ON_RESETFILTER = "ON_RESETFILTER";
+// export const ON_SELECT = "ON_SELECT";
+export const ON_SET_FILTER = "ON_SET_FILTER";
+export const ON_SELECT_TICKETS = "ON_SELECT_TICKETS";
+export const ON_RESET_FILTER = "ON_RESET_FILTER";
 export const ON_SET_CURRENCY = "ON_SET_CURRENCY";
 export const ON_SORT = "ON_SORT";

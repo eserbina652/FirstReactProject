@@ -22,8 +22,8 @@ function App() {
   //     dispatch(onResetFilter());
   //   }
   // }, [filter.length]);
-  const state = useSelector((state) => state);
-  console.log(state);
+  // const state = useSelector((state) => state);
+  // console.log(state);
   return (
     <>
       {/*{popupItem && <Popup />}*/}

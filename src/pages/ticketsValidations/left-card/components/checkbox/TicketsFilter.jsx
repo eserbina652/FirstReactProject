@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./checkbox.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   onResetFilter,
   onSetFilter,
 } from "../../../../../store/reducers/tickets";
+import {
+  actionOnResetFilter,
+  actionOnSelectTickets,
+  actionOnSetFilter,
+} from "../../../../../store/vanillaRedux/tickets/actions/ticketsActions";
 
 const TicketsFilter = () => {
   const dispatch = useDispatch();
+  const filters = useSelector((state) => state.filters);
+  console.log("filters", filters);
   const onSelectFilter = (filter) => {
-    dispatch(onSetFilter(filter));
+    dispatch(actionOnSetFilter(filter));
   };
   const onReset = () => {
-    dispatch(onResetFilter());
+    dispatch(actionOnResetFilter());
   };
-
+  useEffect(() => {
+    if (filters.length) {
+      dispatch(actionOnSelectTickets());
+    } else {
+      dispatch(actionOnResetFilter());
+    }
+  }, [filters]);
   return (
     <div>
       <div>
