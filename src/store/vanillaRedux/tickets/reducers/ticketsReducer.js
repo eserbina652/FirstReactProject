@@ -23,17 +23,13 @@ export default (state = initialState, action) => {
     case ON_SET_CURRENCY:
       return { ...state, currency: action.currency };
     case ON_SET_FILTER:
-      console.log("action", action);
-
       if (action.filter || action.filter === 0) {
-        console.log("state.filtersРЕДУСЕР", state.filters);
         if (state.filters.includes(action.filter)) {
           return {
             ...state,
             filters: state.filters.filter((el) => el !== action.filter),
           };
         } else {
-          console.log("state.filters Else", state.filters);
           return {
             ...state,
             filters: [...state.filters, action.filter],
@@ -42,26 +38,17 @@ export default (state = initialState, action) => {
       }
       return state;
     case ON_RESET_FILTER:
-      console.log("initialState.ticketsData", initialState.ticketsData);
       return {
         ...state,
         ticketsData: [...initialState.ticketsData],
       };
     case ON_SELECT_TICKETS:
-      console.log("state.ticketsData", state.ticketsData);
-
-      // if (!action.filter) {
-      //   return {
-      //     ...initialState,
-      //   };
-      // } else {
       return {
         ...state,
         ticketsData: initialState.ticketsData.filter((el) =>
           state.filters.includes(el.stops)
         ),
       };
-    // }
     default:
       return state;
   }

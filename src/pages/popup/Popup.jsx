@@ -4,13 +4,13 @@ import TicketsHeader from "../ticketsValidations/right-card/components/ticketsCo
 import PopupForm from "./components/PopupForm";
 import CloseButton from "../../components/Button/CloseButton";
 import { useDispatch, useSelector } from "react-redux";
-import { onClose } from "../../store/reducers/popups";
+import { actionOnClose } from "../../store/vanillaRedux/popups/actions/popupsActions";
 
 const Popup = () => {
   const popupItem = useSelector((state) => state.popups.item);
   const dispatch = useDispatch();
   const closePopup = () => {
-    dispatch(onClose());
+    dispatch(actionOnClose());
   };
   return (
     <div className="popup-wrapper">
@@ -24,7 +24,7 @@ const Popup = () => {
           Please fill out the form, if you want to buy a ticket
         </h4>
         <div className="popup-form-wrapper">
-          <PopupForm />
+          <PopupForm item={popupItem} />
         </div>
       </div>
     </div>

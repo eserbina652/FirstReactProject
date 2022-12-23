@@ -2,13 +2,13 @@ import React from "react";
 import { greenCircle } from "../../assets";
 import CloseButton from "../../components/Button/CloseButton";
 import { useDispatch } from "react-redux";
-import { onCloseSuccess } from "../../store/reducers/popups";
 import "./successPopup.css";
+import { actionOnCloseSuccess } from "../../store/vanillaRedux/popups/actions/popupsActions";
 
 const PopupSuccess = () => {
   const dispatch = useDispatch();
   const closePopupSuccess = () => {
-    dispatch(onCloseSuccess());
+    dispatch(actionOnCloseSuccess());
   };
   return (
     <div>

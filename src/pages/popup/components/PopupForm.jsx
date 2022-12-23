@@ -6,26 +6,25 @@ import { formValidation } from "../../../validations/FormValidations";
 import { getCurrencySymbol, getPrise } from "../../../utils/functionFromTicket";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  onClose,
-  onCloseSuccess,
-  onOpenSuccess,
-} from "../../../store/reducers/popups";
+  actionOnClose,
+  actionOnCloseSuccess,
+  actionOnOpenSuccess,
+} from "../../../store/vanillaRedux/popups/actions/popupsActions";
 
-const PopupForm = () => {
+const PopupForm = ({ item }) => {
   const dispatch = useDispatch();
-  const item = useSelector((state) => state.popups.item);
-  const currency = useSelector((state) => state.popups.currency);
+  const currency = useSelector((state) => state.tickets.currency);
   const closePopup = () => {
-    dispatch(onClose());
+    dispatch(actionOnClose());
   };
 
   const openSuccess = () => {
-    dispatch(onOpenSuccess());
+    dispatch(actionOnOpenSuccess());
   };
 
   const closeSuccess = () => {
     setTimeout(() => {
-      dispatch(onCloseSuccess());
+      dispatch(actionOnCloseSuccess());
     }, 3000);
   };
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import "./sortButton.css";
 
-const SortButton = ({ title, onClick, styles }) => {
+const SortButton = ({ onClick, title, styles }) => {
   return (
     <div>
       <button onClick={onClick} className={`valuta-button ${styles}`}>

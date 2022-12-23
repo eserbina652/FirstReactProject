@@ -17,16 +17,12 @@ export const ticketsSlice = createSlice({
     },
     onSetFilter: (state, action) => {
       if (action.payload || action.payload === 0) {
-        console.log("action.payload", action.payload);
         if (state.filters?.includes(action.payload)) {
           state.filters = state.filters.filter((el) => el !== action.payload);
-          console.log("state.filters", state.filters);
         } else {
           state.filters = [...state.filters, action.payload];
-          console.log("state.filtersELSE", state.filters);
         }
       }
-      console.log("state", state);
       return state;
     },
     onSelectFilter: (state, action) => {
