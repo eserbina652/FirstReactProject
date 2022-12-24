@@ -1,83 +1,27 @@
-import LeftCard from "./pages/ticketsValidations/left-card/LeftCard";
-import TicketList from "./pages/ticketsValidations/right-card/components/TicketList";
 import "./app.css";
-import React, { useEffect, useState } from "react";
-import Popup from "./pages/popup/Popup";
-import PopupSuccess from "./pages/successfulPopup/PopupSuccess";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  onResetFilter,
-  onSelectFilter,
-  onSetCurrency,
-} from "./store/reducers/tickets";
+import React, { useEffect } from "react";
+import Main from "./screens/main/Main";
+import CryptoList from "./screens/crypto/CryptoList";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 function App() {
-  const data = useSelector((state) => state.ticketsData);
-  //const state = useSelector((state) => state);
-  const currency = useSelector((state) => state.currency);
-
-  // const filter = useSelector((state) => state.tickets.filters);
-  //
-  // const [value, setValue] = useState("UAH");
-  // const [popupData, setPopupData] = useState(null);
-  // const [popupSuccess, setPopupSuccess] = useState(false);
-
-  // useEffect(() => {
-  //   if (!filter.length) {
-  //     dispatch(onResetFilter());
-  //   }
-  //   // console.log("filter.length", filter.length);
-  // }, [filter.length]);
-
-  // useEffect(() => {
-  //   dispatch(onSetCurrency());
-  //   console.log("currency", currency);
-  // }, [currency]);
-
-  // const onChangeValue = (str) => {
-  //   setValue(str);
-  //   console.log("str", str);
-  // };
-  // const addValueInPopup = (item) => {
-  //   console.log("item", item);
-  //   setPopupData(item);
-  // };
-  // const closePopup = () => {
-  //   setPopupData(null);
-  //   setPopupSuccess(false);
-  // };
-  //
-  // const openSuccess = () => {
-  //   if (popupData) {
-  //     setPopupData(null);
-  //     setPopupSuccess(true);
-  //   }
-  //   setTimeout(() => {
-  //     setPopupSuccess(false);
-  //   }, 3000);
-  // };
-  //console.log("state", state);
   return (
-    <>
-      {/*{popupData && (*/}
-      {/*  <Popup*/}
-      {/*    openSuccess={openSuccess}*/}
-      {/*    closePopup={closePopup}*/}
-      {/*    item={popupData}*/}
-      {/*    addValueInPopup={addValueInPopup}*/}
-      {/*  />*/}
-      {/*)}*/}
-      {/*{popupSuccess && <PopupSuccess closePopup={closePopup} />}*/}
-      <div className="all-wrapper">
-        <LeftCard str={currency} />
-        <TicketList
-          // closePopup={closePopup}
-          // addValueInPopup={addValueInPopup}
-          value={currency}
-          ticketList={data}
-        />
+    <BrowserRouter>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <Link to={"/crypto"}>Тыць</Link>
+        <Link to={"/"}>Home</Link>
       </div>
-    </>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/crypto" element={<CryptoList />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
