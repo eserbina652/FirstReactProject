@@ -10,12 +10,12 @@ export default () => {
   const hamdleClick = () => {
     navigate("/crypto", { state: { foo: 2 } });
   };
-  const goTocrypto = () => {
-    setTimeout(() => navigate("/crypto", { state: { foo: 2 } }), 2000);
-  };
-  useEffect(() => {
-    goTocrypto();
-  }, []);
+  // const goTocrypto = () => {
+  //   setTimeout(() => navigate("/crypto", { state: { foo: 2 } }), 2000); //зачем параметры?
+  // };
+  // useEffect(() => {
+  //   goTocrypto();
+  // }, []);
   const data = useSelector((state) => state.ticketsData);
   const currency = useSelector((state) => state.currency);
   return (
@@ -30,7 +30,6 @@ export default () => {
 };
 
 /*
-Хук юзНавигейт используеться для создания навигатора
-который объединяет страницы необязательным параметром объекта, который
-благодаря хуку доступен
+Хук юзНавигейт используеться для работы навигации не через ссылки,
+а с помощью хука
  */

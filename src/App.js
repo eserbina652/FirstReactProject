@@ -28,6 +28,12 @@ function App() {
 export default App;
 
 /*
+Route - в данном компоненте нужно указать путь и страницу на которую юзер
+будет попадать по указанной ссылке
+Route обязательно должен находится внутри Routes
+ */
+
+/*
 BrowserRouter - it is wrapper
 The element that is at the top is always visible on each page
 We must wrap pages in Rotes tag, don't forget to specify the way of page
