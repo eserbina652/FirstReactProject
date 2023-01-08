@@ -5,22 +5,32 @@ import React from "react";
 import Popup from "./pages/popup/Popup";
 import PopupSuccess from "./pages/successfulPopup/PopupSuccess";
 import { useSelector } from "react-redux";
-import {BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import Main from "./screens/Main/Main";
+import CryptoList from "./screens/Crypto/CryptoList";
 
 function App() {
-  const data = useSelector((state) => state.tickets.ticketsData);
   const isOpenSuccess = useSelector((state) => state.popups.successVisible);
   const popupItem = useSelector((state) => state.popups.item);
   return (
     <BrowserRouter>
-        <link to="/">home</link>
+        <div
+            style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-between",
+            }}
+        >
+            <Link to="/crypto">CryptoList</Link>
+            <Link to="/">Home</Link>
+        </div>
 
       {popupItem && <Popup />}
       {isOpenSuccess && <PopupSuccess />}
-      <div className="all-wrapper">
-        <LeftCard />
-        <TicketList ticketList={data} />
-      </div>
+        <Routes>
+            <Route path="/crypto" element={CryptoList}/>
+            <Route path="/" element={Main}/>
+        </Routes>
     </BrowserRouter>
   );
 }
