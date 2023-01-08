@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-const CryptoList = () => {
+export default () => {
+    const [data, setData] = useState([])
+    const [page, setPage] = useState(1)
+
+
     return (
         <div>
             
@@ -8,7 +12,6 @@ const CryptoList = () => {
     );
 };
 
-export default CryptoList;
 
 
 /*
