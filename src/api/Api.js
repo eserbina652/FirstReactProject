@@ -8,13 +8,12 @@ class Api {
             return await this.fetchDataRow(path, requestOptions)
         } catch (e) {
             throw new Error(`Api line 17 ${e}`)
-
         }
     }
 
     static async fetchDataRow (path, requestOptions) {
         const response = await fetch(`${this.baseURL}${path}`, requestOptions)
-        return response.json()
+        return await response.json()
     }
 }
 
