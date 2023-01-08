@@ -4,7 +4,13 @@ export default () => {
     const [data, setData] = useState([])
     const [page, setPage] = useState(1)
 
-
+    const getData = async () => {
+        try {
+            // const response = await
+        } catch (e) {
+            console.log(e)
+        }
+    }
     return (
         <div>
             
