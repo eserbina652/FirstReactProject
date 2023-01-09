@@ -1,14 +1,23 @@
 .cryptoElements-wrapper {
     display: flex;
     /*justify-content: space-between;*/
-    flex-wrap: wrap;
+    /*flex-direction: row;*/
+    /*flex-wrap: wrap;*/
     border: 3px solid rebeccapurple;
     background-color: lightgray;
     border-radius: 10px;
-    margin: 5px;
+    margin: 15px;
 }
 
 .cryptoName{
-    font-size: 20px;
-    padding: 10px;
+    display: flex;
+    font-size: 30px;
+    font-weight: lighter;
+    align-items: center;
+    padding: 20px;
+}
+
+.cryptoIcon {
+    padding: 15px;
+    width: 8vw;
 }
