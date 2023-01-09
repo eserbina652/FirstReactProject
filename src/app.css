@@ -2,3 +2,9 @@
     display: flex;
     justify-content: space-between;
 }
+
+.links-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between
+}

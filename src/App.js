@@ -14,13 +14,7 @@ function App() {
   const popupItem = useSelector((state) => state.popups.item);
   return (
     <BrowserRouter>
-        <div
-            style={{
-                width: "100%",
-                display: "flex",
-                justifyContent: "space-between",
-            }}
-        >
+        <div className="links-wrapper">
             <Link to="/crypto">CryptoList</Link>
             <Link to="/">Home</Link>
         </div>

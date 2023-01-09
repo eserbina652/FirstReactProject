@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Api from "../../api/Api";
+import "./crypto.css"
 
 export default () => {
     const [data, setData] = useState([])
@@ -30,9 +31,9 @@ export default () => {
             <button onClick={decrease}>Prev</button>
             <button onClick={increase}>Next</button>
             </div>
-            <div>
+            <div className="cryptoElements-wrapper">
             {data.map((e, index) => {
-               return <div key={index}>{e.name}</div>
+               return <div className="cryptoElement" key={index}>{e.name}</div>
             })}
             </div>
         </>
