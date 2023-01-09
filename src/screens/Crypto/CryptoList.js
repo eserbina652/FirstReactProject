@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Api from "../../api/Api";
 
 export default () => {
@@ -8,16 +8,30 @@ export default () => {
     const getData = async () => {
         try {
             const response = await Api.getCryptoList(page)
-            setPage(prevState => [...prevState, ...response])
-            console.log('response', response)
+            setPage((prevState )=> [...prevState, ...response])
         } catch (e) {
             console.log(e)
         }
     }
+    useEffect(() =>{
+        getData()
+    }, [page])
+
+    const decrease = () => {
+       return  page - 1
+    }
+
+    const increase = () => {
+        return page + 1
+    }
     return (
-        <div>
-            
-        </div>
+        <>
+            <button onClick={decrease}>Prev</button>
+            <button onClick={increase}>Next</button>
+            {data.map(e => {
+                <div>{e}</div>
+            })}
+        </>
     );
 };
 
