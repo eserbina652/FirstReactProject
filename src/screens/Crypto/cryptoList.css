@@ -1,0 +1,9 @@
+.decreaseButton, .increaseButton {
+    border: 1px solid #563875;
+    border-radius: 10px;
+    background-color: #c3b6d5;
+    padding: 15px 25px 15px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 15px 15px 15px 30px;
+}

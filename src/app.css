@@ -1,10 +1,12 @@
 .all-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .links-wrapper{
-    width: 100%;
     display: flex;
-    justify-content: space-between
+    font-size: 20px;
+    margin-right: 130px;
+    justify-content: space-around;
+
 }

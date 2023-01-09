@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Api from "../../api/Api";
 import CryptoCard from "./cryptoCards/CryptoCard";
-
+import "./cryptoList.css"
 export default () => {
     const [data, setData] = useState([])
     const [page, setPage] = useState(1)
@@ -29,8 +29,8 @@ export default () => {
     return (
         <>
             <div>
-            <button onClick={decrease}>Prev</button>
-            <button onClick={increase}>Next</button>
+            <button className="decreaseButton" onClick={decrease}>Previous</button>
+            <button className="increaseButton" onClick={increase}>Next</button>
             </div>
             <div>
             {data.map((e, index) => {
