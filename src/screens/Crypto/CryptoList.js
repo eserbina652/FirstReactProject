@@ -8,7 +8,7 @@ export default () => {
     const getData = async () => {
         try {
             const response = await Api.getCryptoList(page)
-            setPage((prevState )=> [...prevState, ...response])
+            setData((prevState )=> [...prevState, ...response])
         } catch (e) {
             console.log(e)
         }
@@ -18,19 +18,21 @@ export default () => {
     }, [page])
 
     const decrease = () => {
-       return  page - 1
+        setPage(page - 1)
     }
 
     const increase = () => {
-        return page + 1
+       setPage(page + 1)
     }
     return (
         <>
             <button onClick={decrease}>Prev</button>
             <button onClick={increase}>Next</button>
+            <div>
             {data.map(e => {
-                <div>{e}</div>
+               return <div>{e}</div>
             })}
+            </div>
         </>
     );
 };
