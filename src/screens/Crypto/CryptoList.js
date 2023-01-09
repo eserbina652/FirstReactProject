@@ -14,7 +14,7 @@ export default () => {
         }
     }
     useEffect(() =>{
-        getData()
+      void  getData()
     }, [page])
 
     const decrease = () => {
@@ -26,11 +26,13 @@ export default () => {
     }
     return (
         <>
+            <div>
             <button onClick={decrease}>Prev</button>
             <button onClick={increase}>Next</button>
+            </div>
             <div>
-            {data.map(e => {
-               return <div>{e}</div>
+            {data.map((e, index) => {
+               return <div key={index}>{e.name}</div>
             })}
             </div>
         </>
