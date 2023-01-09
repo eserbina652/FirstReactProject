@@ -28,7 +28,11 @@ class Api {
 
     }
 
-    static getCryptoList() => asinc
+    static getCryptoList = async (page) => {
+        return this.getData(
+            `/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${page}&sparkline=false\n`
+        )
+    }
 }
 
 export default Api;
