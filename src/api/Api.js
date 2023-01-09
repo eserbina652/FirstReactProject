@@ -15,6 +15,20 @@ class Api {
         const response = await fetch(`${this.baseURL}${path}`, requestOptions)
         return await response.json()
     }
+
+    static async getData(path) {
+        const myHeaders = new Headers()
+        myHeaders.append("Content-Type", "application/json")
+        const requestOptions = {
+            method: "GET",
+            headers: myHeaders,
+            redirect: "follow"
+        }
+        return this.fetchData(path, requestOptions)
+
+    }
+
+    static getCryptoList() => asinc
 }
 
 export default Api;
