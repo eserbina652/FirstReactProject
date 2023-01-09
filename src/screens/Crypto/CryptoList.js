@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Api from "../../api/Api";
-import "./crypto.css"
+import CryptoCard from "./cryptoCards/CryptoCard";
 
 export default () => {
     const [data, setData] = useState([])
@@ -25,15 +25,18 @@ export default () => {
     const increase = () => {
        setPage(page + 1)
     }
+    console.log(data)
     return (
         <>
             <div>
             <button onClick={decrease}>Prev</button>
             <button onClick={increase}>Next</button>
             </div>
-            <div className="cryptoElements-wrapper">
+            <div>
             {data.map((e, index) => {
-               return <div className="cryptoElement" key={index}>{e.name}</div>
+               return (
+                   <CryptoCard item={e} key={index.toString()}/>
+               )
             })}
             </div>
         </>

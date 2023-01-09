@@ -2,13 +2,13 @@
     display: flex;
     /*justify-content: space-between;*/
     flex-wrap: wrap;
-}
-
-.cryptoElement{
     border: 3px solid rebeccapurple;
     background-color: lightgray;
     border-radius: 10px;
-    font-size: 20px;
     margin: 5px;
+}
+
+.cryptoName{
+    font-size: 20px;
     padding: 10px;
 }
