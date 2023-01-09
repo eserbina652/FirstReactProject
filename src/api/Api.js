@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Api {
+export default class Api {
     static baseURL = 'https://api.coingecko.com/api/v3'
 
     static async fetchData(path, requestOptions) {
@@ -35,7 +35,6 @@ class Api {
     }
 }
 
-export default Api;
 
 
 

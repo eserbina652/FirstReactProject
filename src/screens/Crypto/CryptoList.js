@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Api from "../../api/Api";
 
 export default () => {
     const [data, setData] = useState([])
@@ -6,7 +7,9 @@ export default () => {
 
     const getData = async () => {
         try {
-            // const response = await
+            const response = await Api.getCryptoList(page)
+            setPage(prevState => [...prevState, ...response])
+            console.log('response', response)
         } catch (e) {
             console.log(e)
         }

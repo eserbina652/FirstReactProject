@@ -6,13 +6,15 @@ import {useNavigate} from "react-router-dom";
 
 const Main = () => {
     const navigate = useNavigate()
-
+    const handleClick = () => {
+        navigate('/crypto', {state: { foo:2 }})
+    }
     const data = useSelector((state) => state.tickets.ticketsData);
     return (
         <>
             <div className="all-wrapper">
                 <LeftCard />
-                <div>Click Me</div>
+                <div onClick={handleClick}>Click</div>
                 <TicketList ticketList={data} />
             </div>
         </>
