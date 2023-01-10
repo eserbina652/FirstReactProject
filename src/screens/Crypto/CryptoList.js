@@ -25,7 +25,6 @@ export default () => {
     const increase = () => {
        setPage(page + 1)
     }
-    console.log(data)
     return (
         <>
             <div>

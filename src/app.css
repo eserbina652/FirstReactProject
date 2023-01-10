@@ -8,5 +8,19 @@
     font-size: 20px;
     margin-right: 130px;
     justify-content: space-around;
+}
 
+.trashBox-link {
+    display: flex;
+    position: fixed;
+    top: 85%;
+    left: 90%;
+    width: auto;
+}
+
+.trashBox{
+    width:140px;
+    height:140px;
+    object-fit:cover;
+    border-radius:50%;
 }

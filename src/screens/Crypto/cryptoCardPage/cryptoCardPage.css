@@ -1,0 +1,60 @@
+.cryptoElement-wrapper {
+    display: flex;
+    flex-direction: column;
+    border: #a995bd solid 3px;
+    border-radius: 20px;
+    margin: 20px;
+    background-color: #f3ffff;
+}
+
+.headers, .values {
+    display: inherit;
+    flex-direction: row;
+}
+
+.values {
+    align-items: center;
+}
+
+#icon, #icon-value {
+    display: inherit;
+    width: 10vw;
+    font-size: 30px;
+    justify-content: center;
+    padding: 0 0 20px 20px;
+}
+
+#name, #name-value {
+    display: inherit;
+    width: 10vw;
+    font-size: 30px;
+    justify-content: center;
+}
+
+#price, #price-value {
+    display: inherit;
+    width: 20vw;
+    font-size: 30px;
+    justify-content: center;
+}
+
+#minPrice, #minPrice-value {
+    display: inherit;
+    width: 10vw;
+    font-size: 30px;
+    justify-content: center;
+}
+
+#maxPrice, #maxPrice-value {
+    display: inherit;
+    width: 15vw;
+    font-size: 30px;
+    justify-content: center;
+}
+
+#marketCup, #marketCup-value {
+    display: inherit;
+    width: 15vw;
+    font-size: 30px;
+    justify-content: center;
+}

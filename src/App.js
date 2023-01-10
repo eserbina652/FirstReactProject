@@ -8,6 +8,9 @@ import { useSelector } from "react-redux";
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import Main from "./screens/Main/Main";
 import CryptoList from "./screens/Crypto/CryptoList";
+import CryptoCardPage from "./screens/Crypto/cryptoCardPage/CryptoCardPage";
+import {trashBox} from "./assets";
+import TrashBox from "./screens/TrashBox/TrashBox";
 
 function App() {
   const isOpenSuccess = useSelector((state) => state.popups.successVisible);
@@ -24,7 +27,12 @@ function App() {
         <Routes>
             <Route path="/crypto" element={<CryptoList/>}/>
             <Route path="/" element={<Main/>}/>
+            <Route path="/cryptoPage" element={<CryptoCardPage/>}/>
+            <Route path="/trashBox" element={<TrashBox/>}/>
         </Routes>
+        <Link className="trashBox-link" to="/trashBox">
+            <img className="trashBox" src={trashBox} alt="trashBox"/>
+        </Link>
     </BrowserRouter>
   );
 }

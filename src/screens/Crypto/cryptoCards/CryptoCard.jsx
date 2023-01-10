@@ -1,12 +1,21 @@
 import React from 'react';
 import './cryptoCard.css'
 import {useNavigate} from "react-router-dom";
+import BuyButton from "../../../components/Button/BuyButton";
+import {useDispatch, useSelector} from "react-redux";
+import {onAdd} from "../../../store/reducers/trashBox";
 
 const CryptoCard = ({item}) => {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const cryptoItem = useSelector(state => state)
+    console.log('cryptoItem', cryptoItem)
+    const toAdd = () => {
+        dispatch(onAdd())
+    }
 
     const handleClick = () => {
-        navigate('/crypto', {state: item})
+        navigate('/cryptoPage', {state: item})
     }
     return (
         <>
@@ -14,8 +23,9 @@ const CryptoCard = ({item}) => {
             <div className="cryptoElements">
             <img className="cryptoIcon" src={item.image} alt={`${item.name} picture`}/>
             <h3 className="cryptoName">{item.name}</h3>
-            <p className="cryptoPrice">Current price: {item.current_price} {item.symbol}</p>
+            <p className="cryptoPrice">Current price: {item.current_price}$</p>
                 <button onClick={handleClick} className="seeMoreButton">See more</button>
+                <button onClick={toAdd} className="seeMoreButton">Buy</button>
             </div>
         </div>
         </>
