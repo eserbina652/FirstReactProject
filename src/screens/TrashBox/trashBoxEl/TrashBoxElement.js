@@ -3,17 +3,17 @@ import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {onDecreace, onIncreace} from "../../../store/reducers/trashBox";
 import './trashBoxEl.css'
-const TrashBoxElement = ({item}) => {
+const TrashBoxElement = ({item, index}) => {
     const navigate = useNavigate()
-    const amount = useSelector(state => state.trashBox.item.count?.count)
+    const state = useSelector(state => state.trashBox.item)
     const dispatch = useDispatch()
 
     const increase = () => {
-        dispatch(onIncreace(item))
+        dispatch(onIncreace({data: item, count: item.count}))
     }
 
     const decrease = () => {
-        dispatch(onDecreace())
+        dispatch(onDecreace({data: item, count: item.count}))
     }
     // console.log('amount', amount)
 
@@ -21,9 +21,11 @@ const TrashBoxElement = ({item}) => {
         navigate('/cryptoPage', {state: item})
     }
 
+    console.log('state', state)
     return (
         <div>
-            <div className="cryptoElement-wrapper">
+            <div style={index===0 ? { marginTop: '200px' } : { marginTop: '30px' }}
+                 className="cryptoElement-wrapper">
                 <div className="cryptoElements">
                     <img className="cryptoIcon" src={item.image} alt={`${item.name} picture`}/>
                     <h3 className="cryptoName">{item.name}</h3>
@@ -31,7 +33,7 @@ const TrashBoxElement = ({item}) => {
                     <button onClick={handleClick} className="seeMoreButton">See more</button>
                     <button onClick={increase} className="seeMoreButton">+</button>
                     <button onClick={decrease} className="seeMoreButton">-</button>
-                    <p className="cryptoPrice">Amount {item.count}</p>
+                    <p className="cryptoPrice">Amount {item.count} </p>
                 </div>
             </div>
         </div>

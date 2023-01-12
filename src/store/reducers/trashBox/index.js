@@ -4,7 +4,6 @@ import Api from "../../../api/Api";
 
 
 const initialState = {
-    // itemData: Api,
     item: [],
 }
 
@@ -15,19 +14,19 @@ export const trashBoxSlice = createSlice({
         onAdd:(state, action) => {
             // console.log('state', state.item)
             // console.log('action', action.payload)
-            state.item = [...state.item, action.payload]
+            state.item = [...state.item, {...action.payload, count: 1}]
             return state
         },
         onIncreace:(state, action) => {
-            console.log('action.payload', action.payload)
-            const count = {count: 0}
-            state.item = [{...action.payload, count}]
-            state.item.count.count++
-            console.log('state', state)
+            let temp2 = {...action.payload.data, count: action.payload.count + 1}
+            const index = state.item.findIndex(el => el.id === action.payload.data.id)
+            state.item[index] = temp2
             return state
         },
         onDecreace:(state, action) => {
-            state.amount--
+            let temp2 = {...action.payload.data, count: action.payload.count - 1}
+            const index = state.item.findIndex(el => el.id === action.payload.data.id)
+            state.item[index] = temp2
             return state
         }
     }
