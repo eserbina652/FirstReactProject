@@ -8,7 +8,6 @@ import {onSetCurrency} from "../../../../../store/reducers/tickets";
 const ValutaButton = () => {
   const dispatch = useDispatch();
   const setCurrency = (str) => {
-    console.log('str' ,str)
     dispatch(onSetCurrency(str));
   };
   return (

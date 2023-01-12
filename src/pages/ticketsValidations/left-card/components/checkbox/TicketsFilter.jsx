@@ -11,6 +11,9 @@ import {onResetFilter, onSelect, onSetFilter} from "../../../../../store/reducer
 const TicketsFilter = () => {
   const dispatch = useDispatch();
   const filters = useSelector((state) => state.tickets.filters);
+  const data = useSelector(state => state.tickets.ticketsData)
+  console.log('filters', filters)
+  console.log('data', data)
   const onSelectFilter = (filter) => {
     dispatch(onSetFilter(filter));
   };
@@ -20,10 +23,12 @@ const TicketsFilter = () => {
   useEffect(() => {
     if (filters.length) {
       dispatch(onSelect());
+      console.log('onSelect')
     } else {
-      dispatch(actionOnResetFilter());
+      dispatch(onResetFilter());
+      console.log('onReset')
     }
-  }, [filters]);
+  }, []);
   return (
     <div>
       <div>

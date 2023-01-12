@@ -10,8 +10,6 @@ const TrashBoxElement = ({item}) => {
 
     const increase = () => {
         dispatch(onIncreace(item))
-        console.log('amount', amount)
-
     }
 
     const decrease = () => {

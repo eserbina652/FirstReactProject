@@ -14,7 +14,6 @@ import TrashBoxList from "./screens/TrashBox/TrashBoxList";
 
 function App() {
   const isOpenSuccess = useSelector((state) => state.popups.isOpenSuccess);
-    console.log('isOpenSuccess', isOpenSuccess)
   const popupItem = useSelector((state) => state.popups.item);
   return (
     <BrowserRouter>

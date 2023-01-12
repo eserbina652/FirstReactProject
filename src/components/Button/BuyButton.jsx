@@ -10,9 +10,6 @@ const BuyButton = ({ item }) => {
   const currency = useSelector((state) => state.tickets.currency);
   const dispatch = useDispatch();
 
-    console.log('currency', currency)
-
-    console.log('item', item)
   const openPopup = (item) => {
     dispatch(onOpen(item));
   };

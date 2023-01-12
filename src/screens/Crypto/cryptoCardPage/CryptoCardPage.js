@@ -5,14 +5,12 @@ import {onAdd} from "../../../store/reducers/trashBox";
 import {useDispatch, useSelector} from "react-redux";
 const CryptoCardPage = () => {
     const { state } = useLocation();
-    console.log('STATE', state)
     // const item = useSelector(state => state.trashBox.item)
     // console.log('ITEM', item)
     const dispatch = useDispatch()
     const toAdd = () => {
         dispatch(onAdd(state)) // как сделать передачу в корзину по кнопке бай на странице си мор
     }
-    console.log(state)
     return (
         <>
             <div className="cryptoElement-wrapper">

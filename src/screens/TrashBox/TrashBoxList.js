@@ -7,9 +7,6 @@ import {onDecreace, onIncreace} from "../../store/reducers/trashBox";
 const TrashBoxList = () => {
     const item = useSelector(state => state.trashBox.item)
 
-
-    console.log('trashBoxItem', item)
-
     return (
         <>
             <div>

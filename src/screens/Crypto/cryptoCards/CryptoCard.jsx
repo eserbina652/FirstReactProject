@@ -10,7 +10,6 @@ const CryptoCard = ({item}) => {
     const dispatch = useDispatch()
     // const cryptoItem = useSelector(state => state)
     // console.log('cryptoItem', cryptoItem)
-    console.log('item', item)
     const toAdd = () => {
         dispatch(onAdd(item))
     }
