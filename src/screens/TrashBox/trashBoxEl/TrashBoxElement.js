@@ -23,7 +23,7 @@ const TrashBoxElement = ({item}) => {
 
     return (
         <div>
-            <div className="cryptoElements-wrapper">
+            <div className="cryptoElement-wrapper">
                 <div className="cryptoElements">
                     <img className="cryptoIcon" src={item.image} alt={`${item.name} picture`}/>
                     <h3 className="cryptoName">{item.name}</h3>

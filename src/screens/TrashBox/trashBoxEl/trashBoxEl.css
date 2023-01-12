@@ -1,3 +1,8 @@
-.cryptoElements-wrapper:first-child {
-    margin-top: 200px;
+.cryptoElement-wrapper:first-child {
+    margin-top: 215px;
+}
+
+.cryptoElement-wrapper {
+    padding: 20px;
+    box-shadow: #ffdd00 0.5vw 0.5vw 2vw 0 ;
 }
