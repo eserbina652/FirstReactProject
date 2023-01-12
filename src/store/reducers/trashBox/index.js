@@ -4,8 +4,8 @@ import Api from "../../../api/Api";
 
 
 const initialState = {
-    itemData: Api,
-    item: []
+    // itemData: Api,
+    item: [],
 }
 
 export const trashBoxSlice = createSlice({
@@ -13,15 +13,27 @@ export const trashBoxSlice = createSlice({
     initialState: initialState,
     reducers: {
         onAdd:(state, action) => {
-            console.log('state', state.item)
-            console.log('action', action.payload)
+            // console.log('state', state.item)
+            // console.log('action', action.payload)
             state.item = [...state.item, action.payload]
             return state
         },
+        onIncreace:(state, action) => {
+            console.log('action.payload', action.payload)
+            const count = {count: 0}
+            state.item = [{...action.payload, count}]
+            state.item.count.count++
+            console.log('state', state)
+            return state
+        },
+        onDecreace:(state, action) => {
+            state.amount--
+            return state
+        }
     }
 })
 
-export const { onAdd } =
+export const { onAdd, onIncreace, onDecreace } =
     trashBoxSlice.actions;
 
 export default trashBoxSlice.reducer;

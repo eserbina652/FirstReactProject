@@ -9,17 +9,27 @@ import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import Main from "./screens/Main/Main";
 import CryptoList from "./screens/Crypto/CryptoList";
 import CryptoCardPage from "./screens/Crypto/cryptoCardPage/CryptoCardPage";
-import {trashBox} from "./assets";
-import TrashBox from "./screens/TrashBox/TrashBox";
+import {airplane, cryptoCoin, trashBox} from "./assets";
+import TrashBoxList from "./screens/TrashBox/TrashBoxList";
 
 function App() {
   const isOpenSuccess = useSelector((state) => state.popups.successVisible);
   const popupItem = useSelector((state) => state.popups.item);
   return (
     <BrowserRouter>
-        <div className="links-wrapper">
-            <Link to="/crypto">CryptoList</Link>
-            <Link to="/">Home</Link>
+        <div className="header">
+            <Link className="links-wrapper" to="/crypto">
+                <p className="header-text">Crypto-Coins</p>
+                <img className="links-img" src={cryptoCoin} alt="Crypto-Coins"/>
+            </Link>
+            <Link className="links-wrapper" to="/">
+                <p className="header-text">Airplane Tickets</p>
+                <img className="links-img" src={airplane} alt="Airplane Tickets"/>
+            </Link>
+            <Link className="links-wrapper" to="/trashBox">
+                <p className="header-text">Shopping Basket</p>
+                <img className="links-img" src={trashBox} alt="trashBox"/>
+            </Link>
         </div>
 
       {popupItem && <Popup />}
@@ -28,11 +38,8 @@ function App() {
             <Route path="/crypto" element={<CryptoList/>}/>
             <Route path="/" element={<Main/>}/>
             <Route path="/cryptoPage" element={<CryptoCardPage/>}/>
-            <Route path="/trashBox" element={<TrashBox/>}/>
+            <Route path="/trashBox" element={<TrashBoxList/>}/>
         </Routes>
-        <Link className="trashBox-link" to="/trashBox">
-            <img className="trashBox" src={trashBox} alt="trashBox"/>
-        </Link>
     </BrowserRouter>
   );
 }

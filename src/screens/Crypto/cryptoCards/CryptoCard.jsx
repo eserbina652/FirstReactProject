@@ -8,10 +8,11 @@ import {onAdd} from "../../../store/reducers/trashBox";
 const CryptoCard = ({item}) => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const cryptoItem = useSelector(state => state)
-    console.log('cryptoItem', cryptoItem)
+    // const cryptoItem = useSelector(state => state)
+    // console.log('cryptoItem', cryptoItem)
+    console.log('item', item)
     const toAdd = () => {
-        dispatch(onAdd())
+        dispatch(onAdd(item))
     }
 
     const handleClick = () => {
