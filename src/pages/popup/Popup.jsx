@@ -5,12 +5,13 @@ import PopupForm from "./components/PopupForm";
 import CloseButton from "../../components/Button/CloseButton";
 import { useDispatch, useSelector } from "react-redux";
 import { actionOnClose } from "../../store/vanillaRedux/popups/actions/popupsActions";
+import {onClose} from "../../store/reducers/popups";
 
 const Popup = () => {
   const popupItem = useSelector((state) => state.popups.item);
   const dispatch = useDispatch();
   const closePopup = () => {
-    dispatch(actionOnClose());
+    dispatch(onClose());
   };
   return (
     <div className="popup-wrapper">

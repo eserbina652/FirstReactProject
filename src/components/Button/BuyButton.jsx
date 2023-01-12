@@ -3,13 +3,18 @@ import "./buyButton.css";
 import { getPrise, getCurrencySymbol } from "../../utils/functionFromTicket.js";
 import { useDispatch, useSelector } from "react-redux";
 import { actionOnOpen } from "../../store/vanillaRedux/popups/actions/popupsActions";
+import {logDOM} from "@testing-library/react";
+import {onOpen} from "../../store/reducers/popups";
 
 const BuyButton = ({ item }) => {
   const currency = useSelector((state) => state.tickets.currency);
   const dispatch = useDispatch();
 
+    console.log('currency', currency)
+
+    console.log('item', item)
   const openPopup = (item) => {
-    dispatch(actionOnOpen(item));
+    dispatch(onOpen(item));
   };
   return (
     <div>

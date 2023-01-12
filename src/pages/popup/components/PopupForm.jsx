@@ -10,21 +10,22 @@ import {
   actionOnCloseSuccess,
   actionOnOpenSuccess,
 } from "../../../store/vanillaRedux/popups/actions/popupsActions";
+import {onClose, onCloseSuccess, onOpenSuccess} from "../../../store/reducers/popups";
 
 const PopupForm = ({ item }) => {
   const dispatch = useDispatch();
   const currency = useSelector((state) => state.tickets.currency);
   const closePopup = () => {
-    dispatch(actionOnClose());
+    dispatch(onClose());
   };
 
   const openSuccess = () => {
-    dispatch(actionOnOpenSuccess());
+    dispatch(onOpenSuccess());
   };
 
   const closeSuccess = () => {
     setTimeout(() => {
-      dispatch(actionOnCloseSuccess());
+      dispatch(onCloseSuccess());
     }, 3000);
   };
   return (

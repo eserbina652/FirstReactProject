@@ -6,19 +6,20 @@ import {
   actionOnSelectTickets,
   actionOnSetFilter,
 } from "../../../../../store/vanillaRedux/tickets/actions/ticketsActions";
+import {onResetFilter, onSelect, onSetFilter} from "../../../../../store/reducers/tickets";
 
 const TicketsFilter = () => {
   const dispatch = useDispatch();
   const filters = useSelector((state) => state.tickets.filters);
   const onSelectFilter = (filter) => {
-    dispatch(actionOnSetFilter(filter));
+    dispatch(onSetFilter(filter));
   };
   const onReset = () => {
-    dispatch(actionOnResetFilter());
+    dispatch(onResetFilter());
   };
   useEffect(() => {
     if (filters.length) {
-      dispatch(actionOnSelectTickets());
+      dispatch(onSelect());
     } else {
       dispatch(actionOnResetFilter());
     }

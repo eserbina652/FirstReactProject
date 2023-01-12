@@ -4,11 +4,12 @@ import CloseButton from "../../components/Button/CloseButton";
 import { useDispatch } from "react-redux";
 import "./successPopup.css";
 import { actionOnCloseSuccess } from "../../store/vanillaRedux/popups/actions/popupsActions";
+import {onCloseSuccess} from "../../store/reducers/popups";
 
 const PopupSuccess = () => {
   const dispatch = useDispatch();
   const closePopupSuccess = () => {
-    dispatch(actionOnCloseSuccess());
+    dispatch(onCloseSuccess());
   };
   return (
     <div>

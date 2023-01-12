@@ -4,6 +4,7 @@ import TicketsFooter from "./ticketsComponents/footer/TicketsFooter";
 import TicketsHeader from "./ticketsComponents/header/TicketsHeader";
 
 const Ticket = ({ item }) => {
+    console.log('TicketList ITEM', item)
   return (
     <>
       <div className="right-ticket">

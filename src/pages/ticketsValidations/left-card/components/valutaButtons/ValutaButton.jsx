@@ -3,11 +3,13 @@ import "./valutaButtons.css";
 import SortButton from "../../../../../components/Button/SortButton";
 import { useDispatch } from "react-redux";
 import { actionOnSetCurrency } from "../../../../../store/vanillaRedux/tickets/actions/ticketsActions";
+import {onSetCurrency} from "../../../../../store/reducers/tickets";
 
 const ValutaButton = () => {
   const dispatch = useDispatch();
   const setCurrency = (str) => {
-    dispatch(actionOnSetCurrency(str));
+    console.log('str' ,str)
+    dispatch(onSetCurrency(str));
   };
   return (
     <div>

@@ -55,6 +55,6 @@ a:-webkit-any-link {
     top: 0;
     margin-left: -28px;
     padding: 10px;
-    z-index: 3;
+    z-index: 1;
     box-shadow: #1168ff 1vw 1vw 2vw -1vw ;
 }
