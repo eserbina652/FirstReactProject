@@ -28,6 +28,9 @@ export const trashBoxSlice = createSlice({
             const index = state.item.findIndex(el => el.id === action.payload.data.id)
             state.item[index] = temp2
             return state
+        },
+        onDuplicate:(state, action) => {
+
         }
     }
 })
@@ -37,5 +40,12 @@ export const { onAdd, onIncreace, onDecreace } =
 
 export default trashBoxSlice.reducer;
 /*
-информация о билетах содержится в data/cryptoList.js
+если индекс элемента (по клику на кнопку бай) === какому либо из индексов в массиве корзины,
+то не отрисовывать его, а добавлять +1 к полю каунт элю по данному индексу
+
+if(state.item.find)
+
+            state.item = [...state.item, {...action.payload, count: 1}]
+
+
  */

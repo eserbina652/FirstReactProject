@@ -21,4 +21,3 @@ const TrashBoxList = () => {
 };
 
 export default TrashBoxList;
-//Todo: tickets doesn't repeate!

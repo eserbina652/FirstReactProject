@@ -27,7 +27,7 @@ export default () => {
     }
     return (
         <>
-            <div>
+            <div className="button-wrap">
             <button className="decreaseButton" onClick={decrease}>Previous</button>
             <button className="increaseButton" onClick={increase}>Next</button>
             </div>
