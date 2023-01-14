@@ -12,10 +12,6 @@
     /*align-items: center;*/
 }
 
-.cryptoElements-wrapper:first-child {
-    margin-top: 145px;
-}
-
 .cryptoElements {
     display: flex;
     align-items: center;

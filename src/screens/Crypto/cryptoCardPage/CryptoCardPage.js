@@ -1,7 +1,7 @@
 import React from 'react';
 import {useLocation} from "react-router-dom";
 import './cryptoCardPage.css'
-import {onAdd} from "../../../store/reducers/trashBox";
+import {onAdd, onDuplicate} from "../../../store/reducers/trashBox";
 import {useDispatch, useSelector} from "react-redux";
 const CryptoCardPage = () => {
     const { state } = useLocation();
@@ -9,7 +9,12 @@ const CryptoCardPage = () => {
     // console.log('ITEM', item)
     const dispatch = useDispatch()
     const toAdd = () => {
-        dispatch(onAdd(state)) // как сделать передачу в корзину по кнопке бай на странице си мор
+        dispatch(onAdd(state))
+    }
+    console.log('state', state)
+
+    const toDuplicate = () => {
+        dispatch(onDuplicate(state))
     }
     return (
         <>

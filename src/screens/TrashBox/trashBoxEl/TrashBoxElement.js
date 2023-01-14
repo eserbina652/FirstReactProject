@@ -20,8 +20,8 @@ const TrashBoxElement = ({item, index}) => {
     const handleClick = () => {
         navigate('/cryptoPage', {state: item})
     }
-
-    console.log('state', state)
+    console.log('TrashBoxEl', item)
+    // console.log('state', state)
     return (
         <div>
             <div style={index===0 ? { marginTop: '200px' } : { marginTop: '30px' }}
