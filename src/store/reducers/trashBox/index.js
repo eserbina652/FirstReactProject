@@ -12,9 +12,7 @@ export const trashBoxSlice = createSlice({
     initialState: initialState,
     reducers: {
         onAdd:(state, action) => {
-
             state.item = [...state.item, {...action.payload, count: 1}]
-            console.log('state.item', state.item)
             return state
         },
         onIncreace:(state, action) => {
@@ -31,23 +29,10 @@ export const trashBoxSlice = createSlice({
             state.item[index] = temp2
             return state
         },
-        onDuplicate:(state, action) => {
-
-        }
-        /*
-если индекс элемента (по клику на кнопку бай) === какому либо из индексов в массиве корзины,
-то не отрисовывать его, а добавлять +1 к полю каунт элю по данному индексу
-
-if(state.item.forEach(el => el.id === prevState.item.data.id)) {
-
-            }
-
-            state.item = [...state.item, {...action.payload, count: 1}]
- */
     }
 })
 
-export const { onAdd, onIncreace, onDecreace, onDuplicate } =
+export const { onAdd, onIncreace, onDecreace } =
     trashBoxSlice.actions;
 
 export default trashBoxSlice.reducer;

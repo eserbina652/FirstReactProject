@@ -1,6 +1,6 @@
 import React from 'react';
 import './cryptoCard.css'
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import BuyButton from "../../../components/Button/BuyButton";
 import {useDispatch, useSelector} from "react-redux";
 import {onAdd} from "../../../store/reducers/trashBox";
@@ -9,9 +9,12 @@ const CryptoCard = ({item}) => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const cryptoItem = useSelector(state => state)
+    // const { state } = useLocation();
+
     // console.log('cryptoCardItem', cryptoItem)
     const toAdd = () => {
-        dispatch(onAdd({data: item, count: item.count}))
+        dispatch(onAdd(item))
+        // dispatch(onAdd({data: item, count: item.count}))
     }
 
     const handleClick = () => {

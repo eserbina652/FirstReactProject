@@ -1,21 +1,17 @@
 import React from 'react';
 import {useLocation} from "react-router-dom";
 import './cryptoCardPage.css'
-import {onAdd, onDuplicate} from "../../../store/reducers/trashBox";
+import {onAdd} from "../../../store/reducers/trashBox";
 import {useDispatch, useSelector} from "react-redux";
 const CryptoCardPage = () => {
     const { state } = useLocation();
-    // const item = useSelector(state => state.trashBox.item)
+    const item = useSelector(state => state.trashBox.item)
     // console.log('ITEM', item)
     const dispatch = useDispatch()
     const toAdd = () => {
         dispatch(onAdd(state))
     }
-    console.log('state', state)
 
-    const toDuplicate = () => {
-        dispatch(onDuplicate(state))
-    }
     return (
         <>
             <div className="cryptoElement-wrapper">
