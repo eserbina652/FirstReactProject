@@ -8,19 +8,21 @@ import {onAdd, onIncreace} from "../../../store/reducers/trashBox";
 const CryptoCard = ({item}) => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const cryptoItem = useSelector(state => state)
-    // const { state } = useLocation();
+    // const cryptoItem = useSelector(state => state)
+    const { state } = useLocation();
 
     // console.log('cryptoCardItem', cryptoItem)
-    const toAdd = (item) => {
+    const toAdd = () => {
             // dispatch(onIncreace({data: item, count: item.count}))
         dispatch(onAdd(item))
     }
-
-    console.log('item.id', item.id)
     const handleClick = () => {
         navigate('/cryptoPage', {state: item})
     }
+    console.log('item', item)
+    console.log('state', state)
+
+
     return (
         <>
         <div className="cryptoElements-wrapper">

@@ -25,6 +25,7 @@ export default () => {
     const increase = () => {
        setPage(page + 1)
     }
+    console.log('data', data);
     return (
         <>
             <div className="button-wrap">
@@ -41,6 +42,8 @@ export default () => {
         </>
     );
 };
+
+
 
 
 

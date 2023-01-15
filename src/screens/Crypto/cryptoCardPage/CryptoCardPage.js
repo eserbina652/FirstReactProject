@@ -6,13 +6,12 @@ import {useDispatch, useSelector} from "react-redux";
 const CryptoCardPage = () => {
     const { state } = useLocation();
     const item = useSelector(state => state.trashBox.item)
-    console.log('ITEM', item)
     const dispatch = useDispatch()
 
-    let res = new Set()
-    res.add(...item)
+    // let res = new Set()
+    // res.add(...item)
 
-
+/*попытка исправить дублирование*/
     // const toAdd = () => {
     //     let res = new Set()
     //     res.add(...item)
@@ -20,15 +19,12 @@ const CryptoCardPage = () => {
     //     console.log('res', res)
     //
     // }
+    console.log('information page STATE', state)
+    console.log('information page ITEM', item)
     const toAdd = () => {
         dispatch(onAdd(state))
     }
 
-    const onIncrease = () => {
-        dispatch(onIncreace({data: item, count: item.count}))
-    }
-
-    console.log(state.id);
     return (
         <>
             <div className="cryptoElement-wrapper">
