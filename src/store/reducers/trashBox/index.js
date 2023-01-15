@@ -19,6 +19,7 @@ export const trashBoxSlice = createSlice({
         onIncreace:(state, action) => {
             let temp2 = {...action.payload.data, count: action.payload.count + 1}
             const index = state.item.findIndex(el => el.id === action.payload.data.id)
+            console.log('action.payload', action.payload)
             state.item[index] = temp2
             return state
         },
@@ -41,9 +42,20 @@ export const { onAdd, onIncreace, onDecreace, onDeleteEl } =
     trashBoxSlice.actions;
 
 export default trashBoxSlice.reducer;
-
-
-
+//
+//
+// let arr = [1, 2, 3, 4, 5]
+//     // let res = arr.map(el => console.log(el * 2))
+//
+// function a(arr) {
+//     let res = []
+//     for (let el of arr) {
+//        res.push(el * 2)
+//     }
+//     console.log(res);
+// }
+//
+// a(arr)
 
 
 

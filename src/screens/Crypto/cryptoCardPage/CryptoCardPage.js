@@ -8,22 +8,22 @@ const CryptoCardPage = () => {
     const item = useSelector(state => state.trashBox.item)
     const dispatch = useDispatch()
 
-    // let res = new Set()
-    // res.add(...item)
 
-/*попытка исправить дублирование*/
-    // const toAdd = () => {
-    //     let res = new Set()
-    //     res.add(...item)
-    //     res.has(state.id) ? dispatch(onIncreace({data: item, count: item.count})) : dispatch(onAdd(state))
-    //     console.log('res', res)
-    //
-    // }
-    console.log('information page STATE', state)
-    console.log('information page ITEM', item)
+    console.log('item', item)
+
     const toAdd = () => {
-        dispatch(onAdd(state))
+        const currentEl = item.find(el => el.id === state.id)
+        if (currentEl) {
+            console.log('currentEl', currentEl)
+            dispatch(onIncreace({data: currentEl, count: currentEl.count}))
+        } else {
+            dispatch(onAdd(state))
+        }
     }
+
+    // const toAdd = () => {
+    //     dispatch(onAdd(state))
+    // }
 
     return (
         <>
