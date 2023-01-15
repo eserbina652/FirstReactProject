@@ -5,6 +5,7 @@ import Api from "../../../api/Api";
 
 const initialState = {
     item: [],
+    visible: false
 }
 
 export const trashBoxSlice = createSlice({
@@ -29,10 +30,21 @@ export const trashBoxSlice = createSlice({
             state.item[index] = temp2
             return state
         },
+        onDeleteEl:(state,action) => {
+            let res = [...state.item]
+            console.log('res', res)
+            console.log('state.item', state.item)
+
+            res.filter(el => el.count !== 0)
+
+            console.log('res', res)
+            console.log('state.item', state.item)
+            return state
+        }
     }
 })
 
-export const { onAdd, onIncreace, onDecreace } =
+export const { onAdd, onIncreace, onDecreace, onDeleteEl } =
     trashBoxSlice.actions;
 
 export default trashBoxSlice.reducer;

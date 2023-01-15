@@ -1,26 +1,35 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {onDecreace, onIncreace} from "../../../store/reducers/trashBox";
+import {onDecreace, onDeleteEl, onIncreace} from "../../../store/reducers/trashBox";
 import './trashBoxEl.css'
+import PopupSuccess from "../../../pages/successfulPopup/PopupSuccess";
+import {onCloseSuccess, onOpenSuccess} from "../../../store/reducers/popups";
 const TrashBoxElement = ({item, index}) => {
     const navigate = useNavigate()
-    const state = useSelector(state => state.trashBox.item)
     const dispatch = useDispatch()
 
     const increase = () => {
-        dispatch(onIncreace({data: item, count: item.count}))
+            dispatch(onIncreace({data: item, count: item.count}))
     }
 
     const decrease = () => {
-        dispatch(onDecreace({data: item, count: item.count}))
+        if (item.count === 1) {
+            dispatch(onDeleteEl(item))
+            dispatch(onOpenSuccess())
+            setTimeout(() => {
+                dispatch(onCloseSuccess());
+            }, 3000);
+        } else {
+            dispatch(onDecreace({data: item, count: item.count}))
+        }
     }
     // console.log('amount', amount)
 
     const handleClick = () => {
         navigate('/cryptoPage', {state: item})
     }
-    console.log('TrashBoxEl', item)
+    console.log('TrashBoxEl', item.id)
     // console.log('state', state)
     return (
         <div>

@@ -1,17 +1,34 @@
 import React from 'react';
 import {useLocation} from "react-router-dom";
 import './cryptoCardPage.css'
-import {onAdd} from "../../../store/reducers/trashBox";
+import {onAdd, onIncreace} from "../../../store/reducers/trashBox";
 import {useDispatch, useSelector} from "react-redux";
 const CryptoCardPage = () => {
     const { state } = useLocation();
     const item = useSelector(state => state.trashBox.item)
-    // console.log('ITEM', item)
+    console.log('ITEM', item)
     const dispatch = useDispatch()
+
+    let res = new Set()
+    res.add(...item)
+
+
+    // const toAdd = () => {
+    //     let res = new Set()
+    //     res.add(...item)
+    //     res.has(state.id) ? dispatch(onIncreace({data: item, count: item.count})) : dispatch(onAdd(state))
+    //     console.log('res', res)
+    //
+    // }
     const toAdd = () => {
         dispatch(onAdd(state))
     }
 
+    const onIncrease = () => {
+        dispatch(onIncreace({data: item, count: item.count}))
+    }
+
+    console.log(state.id);
     return (
         <>
             <div className="cryptoElement-wrapper">

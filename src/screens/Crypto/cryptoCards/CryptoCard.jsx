@@ -3,7 +3,7 @@ import './cryptoCard.css'
 import {useLocation, useNavigate} from "react-router-dom";
 import BuyButton from "../../../components/Button/BuyButton";
 import {useDispatch, useSelector} from "react-redux";
-import {onAdd} from "../../../store/reducers/trashBox";
+import {onAdd, onIncreace} from "../../../store/reducers/trashBox";
 
 const CryptoCard = ({item}) => {
     const navigate = useNavigate()
@@ -12,11 +12,12 @@ const CryptoCard = ({item}) => {
     // const { state } = useLocation();
 
     // console.log('cryptoCardItem', cryptoItem)
-    const toAdd = () => {
+    const toAdd = (item) => {
+            // dispatch(onIncreace({data: item, count: item.count}))
         dispatch(onAdd(item))
-        // dispatch(onAdd({data: item, count: item.count}))
     }
 
+    console.log('item.id', item.id)
     const handleClick = () => {
         navigate('/cryptoPage', {state: item})
     }
