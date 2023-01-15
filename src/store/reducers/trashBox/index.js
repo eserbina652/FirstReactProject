@@ -31,13 +31,13 @@ export const trashBoxSlice = createSlice({
             return state
         },
         onDeleteEl:(state,action) => {
-            let res = [...state.item]
-            console.log('res', res)
+            // let res = [...state.item]
+            // console.log('res', res)
             console.log('state.item', state.item)
 
-            res.filter(el => el.count !== 0)
+            state.item = state.item.filter(el => el.id === action.payload)
 
-            console.log('res', res)
+            // console.log('res', res)
             console.log('state.item', state.item)
             return state
         }
