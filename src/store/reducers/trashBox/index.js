@@ -31,14 +31,7 @@ export const trashBoxSlice = createSlice({
             return state
         },
         onDeleteEl:(state,action) => {
-            // let res = [...state.item]
-            // console.log('res', res)
-            console.log('state.item', state.item)
-
-            state.item = state.item.filter(el => el.id === action.payload)
-
-            // console.log('res', res)
-            console.log('state.item', state.item)
+            state.item = state.item.filter(el => el.id !== action.payload.id)
             return state
         }
     }
