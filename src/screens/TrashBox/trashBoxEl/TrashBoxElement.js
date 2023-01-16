@@ -44,8 +44,8 @@ const TrashBoxElement = ({item, index}) => {
     // console.log('TrashBoxEl', item)
     // console.log('state', state)
     return (
-        <div>
-            <div style={index===0 ? { marginTop: '200px' } : { marginTop: '30px' }}
+        <>
+            <div style={index===0 ? { marginTop: '80px' } : { marginTop: '30px' }}
                  className="cryptoElement-wrapper">
                 <div className="cryptoElements">
                     <img className="cryptoIcon" src={item.image} alt={`${item.name} picture`}/>
@@ -57,7 +57,7 @@ const TrashBoxElement = ({item, index}) => {
                     <p className="cryptoPrice">Amount {item.count} </p>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

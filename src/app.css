@@ -6,6 +6,7 @@ body {
 .all-wrapper {
     display: flex;
     justify-content: space-around;
+    margin-top: 30px;
 }
 
 .links-wrapper{
@@ -58,8 +59,8 @@ a:-webkit-any-link {
     width: 100%;
     height: 15%;
     top: 0;
-    margin-left: -28px;
+    margin-left: -15px;
     padding: 10px;
-    z-index: 1;
+    z-index: 5;
     box-shadow: #1168ff 1vw 1vw 2vw -1vw ;
 }

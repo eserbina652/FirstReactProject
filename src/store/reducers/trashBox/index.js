@@ -5,7 +5,6 @@ import Api from "../../../api/Api";
 
 const initialState = {
     item: [],
-    visible: false
 }
 
 export const trashBoxSlice = createSlice({
@@ -42,20 +41,6 @@ export const { onAdd, onIncreace, onDecreace, onDeleteEl } =
     trashBoxSlice.actions;
 
 export default trashBoxSlice.reducer;
-//
-//
-// let arr = [1, 2, 3, 4, 5]
-//     // let res = arr.map(el => console.log(el * 2))
-//
-// function a(arr) {
-//     let res = []
-//     for (let el of arr) {
-//        res.push(el * 2)
-//     }
-//     console.log(res);
-// }
-//
-// a(arr)
 
 
 

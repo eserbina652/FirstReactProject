@@ -1,5 +1,6 @@
 .cryptoElements-wrapper {
     display: inline-flex;
+    position: relative;
     flex-direction: column;
     flex-wrap: wrap;
     border: 3px solid #ffdd00;
@@ -14,6 +15,8 @@
 
 .cryptoElements {
     display: flex;
+    position: relative;
+    z-index: 1;
     align-items: center;
     justify-content: space-around;
 }

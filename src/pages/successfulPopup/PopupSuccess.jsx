@@ -13,13 +13,15 @@ const PopupSuccess = () => {
   };
   return (
     <div>
-      <div className="popup-wrapper">
-        <div className="popup-little-window">
-          <CloseButton onClick={() => closePopupSuccess()} />
-          <div className="middleSuccess">
-            <img className="successPicture" src={greenCircle} alt="success" />
+      <div className="success-popup-wrapper">
+        <div className="success-popup-little-window">
+          <div className='success-close-button'>
+            <CloseButton onClick={() => closePopupSuccess()} />
           </div>
-          <p className="underPictureText">Success!</p>
+            <img className="successPicture" src={greenCircle} alt="success" />
+          <div className="underPictureText">
+            <p>Success!</p>
+          </div>
         </div>
       </div>
     </div>

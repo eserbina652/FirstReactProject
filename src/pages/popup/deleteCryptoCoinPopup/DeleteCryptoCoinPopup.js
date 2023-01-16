@@ -32,8 +32,10 @@ const DeleteCryptoCoinPopup = () => {
             <div className="delete-popup-wrapper">
                 <div className="delete-popup-little-window">
                     <CloseButton onClick={() => closePopupDelete()} />
+                    <div className="middle-text">
+                        <p>Are you really want to delete this coin?</p>
+                    </div>
                     <div className="middleButtons">
-                        <p>Are you really want to delete this coin</p>
                         <button className="deleteButtons" onClick={yesButtonDelete}>Yes</button>
                         <button className="deleteButtons" onClick={noButtonDelete}>No</button>
                     </div>

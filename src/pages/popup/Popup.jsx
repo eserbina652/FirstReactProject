@@ -16,7 +16,9 @@ const Popup = () => {
   return (
     <div className="popup-wrapper">
       <div className="popup-little-window">
-        <CloseButton onClick={closePopup} />
+       <div className='close-button'>
+         <CloseButton onClick={closePopup} />
+       </div>
         <div className="popup-header">
           <h3 className="header-title">Your ticket</h3>
         </div>

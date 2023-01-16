@@ -1,11 +1,12 @@
 .cryptoElement-wrapper {
     display: flex;
     flex-direction: column;
+    position: relative;
     border: #0039ff solid 3px;
     border-radius: 20px;
     margin: 200px 60px auto 60px;
     background-color: #f3ffff;
-
+    z-index: 1;
 }
 
 .headers, .values {

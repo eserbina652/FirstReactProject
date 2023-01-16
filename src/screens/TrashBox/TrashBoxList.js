@@ -9,7 +9,7 @@ const TrashBoxList = () => {
 
     return (
         <>
-            <div>
+            <div className='trashBoxEl-warp'>
                 {item.map((e, index) => {
                     return (
                         <TrashBoxElement index={index} item={e} key={index.toString()}/>

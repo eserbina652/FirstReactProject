@@ -1,11 +1,13 @@
 .close-button-wrapper {
     display: flex;
-    justify-content: flex-end;
+
 }
 
 .close-button {
+    display: inherit;
+    justify-content: flex-end;
    height: 25px;
     cursor: pointer;
     font-size: 15px;
-    background-color: aliceblue;
+    background-color: #ffdd00;
 }
