@@ -16,7 +16,7 @@ const DeleteCryptoCoinPopup = () => {
 
     const yesButtonDelete = () => {
         dispatch(onCloseDelete())
-        console.log('delete Item is', item)
+        // console.log('delete Item is', item)
         dispatch(onDeleteEl(deletedId))
         dispatch(onOpenSuccess())
         setTimeout(() => {
