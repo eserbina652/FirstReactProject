@@ -8,7 +8,7 @@ import './deletePopup.css'
 
 const DeleteCryptoCoinPopup = () => {
     const dispatch = useDispatch();
-    const item = useSelector(state => state.trashBox.item)
+    // const item = useSelector(state => state.trashBox.item)
     const deletedId = useSelector(state => state.popups.deletedId)
     const closePopupDelete = () => {
         dispatch(onCloseDelete());
