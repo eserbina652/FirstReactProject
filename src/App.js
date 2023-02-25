@@ -4,10 +4,10 @@ import Popup from "./pages/popup/Popup";
 import PopupSuccess from "./pages/successfulPopup/PopupSuccess";
 import {useSelector} from "react-redux";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Main from "./screens/Main/Main";
-import CryptoList from "./screens/Crypto/CryptoList";
-import CryptoCardPage from "./screens/Crypto/cryptoCardPage/CryptoCardPage";
-import TrashBoxList from "./screens/TrashBox/TrashBoxList";
+import Main from "./routes/Main";
+import CryptoList from "./routes/CryptoList";
+import CryptoCardPage from "./routes/CryptoCardPage";
+import TrashBoxList from "./routes/TrashBoxList";
 import DeleteCryptoCoinPopup from "./pages/popup/deleteCryptoCoinPopup/DeleteCryptoCoinPopup";
 import Navbar from "./components/Navbar";
 

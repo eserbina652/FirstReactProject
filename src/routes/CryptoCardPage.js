@@ -1,7 +1,7 @@
 import React from 'react';
 import {useLocation} from "react-router-dom";
-import './cryptoCardPage.css'
-import {onAdd, onIncreace} from "../../../store/reducers/trashBox";
+import '../screens/Crypto/cryptoCardPage/cryptoCardPage.css'
+import {onAdd, onIncreace} from "../store/reducers/trashBox";
 import {useDispatch, useSelector} from "react-redux";
 const CryptoCardPage = () => {
     const { state } = useLocation();

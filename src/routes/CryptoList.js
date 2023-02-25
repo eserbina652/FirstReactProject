@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import Api from "../../api/Api";
-import CryptoCard from "./cryptoCards/CryptoCard";
-import "./cryptoList.css"
+import Api from "../api/Api";
+import CryptoCard from "../screens/Crypto/cryptoCards/CryptoCard";
+import "../screens/Crypto/cryptoList.css"
 export default () => {
     const [data, setData] = useState([])
     const [page, setPage] = useState(1)
