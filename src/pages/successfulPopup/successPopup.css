@@ -26,14 +26,6 @@
     justify-content: flex-end;
 }
 
-/*.middleSuccess {*/
-/*    display: inherit;*/
-/*    !*margin: 10vw 0 20vw 10vw;*!*/
-/*    justify-content: center;*/
-/*    position: fixed;*/
-/*    z-index: 100;*/
-/*}*/
-
 .successPicture {
     display: inherit;
     width: 25vw;

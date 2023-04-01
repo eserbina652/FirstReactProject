@@ -11,7 +11,7 @@ export default class Api {
         }
     }
 
-    static async fetchDataRow (path, requestOptions) {
+    static async fetchDataRow(path, requestOptions) {
         const response = await fetch(`${this.baseURL}${path}`, requestOptions)
         return await response.json()
     }
