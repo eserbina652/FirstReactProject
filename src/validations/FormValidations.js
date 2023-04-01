@@ -1,40 +1,40 @@
 export const formValidation = (values) => {
-  const errors = {};
-  if (!values.name) {
-    errors.name = "Required";
-  } else if (!/^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/gim.test(values.name)) {
-    errors.name = "Invalid name";
-  }
-  if (!values.surname) {
-    errors.surname = "Required";
-  } else if (
-    !/^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/gim.test(values.surname)
-  ) {
-    errors.surname = "Invalid surname";
-  }
-  if (!values.email) {
-    errors.email = "Required";
-  } else if (
-    !/^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]{0,64}@[a-zA-ZöäüÖÄÜß0-9](?:[a-zA-ZöäüÖÄÜß0-9-]{0,255}[a-zA-ZöäüÖÄÜß0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,56}[a-zA-Z0-9])?)+$/i.test(
-      values.email
-    )
-  ) {
-    errors.email = "Invalid email address";
-  }
-  if (!values.phone) {
-    errors.phone = "Required";
-  } else if (
-    !/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/.test(values.phone)
-  ) {
-    errors.phone = "Invalid phone";
-  }
-  if (!values.passport) {
-    errors.passport = "Required";
-  } else if (!/^\d{6}[A-Z]{2}$/.test(values.passport)) {
-    errors.passport = "Invalid passport";
-  }
+    const errors = {};
+    if (!values.name) {
+        errors.name = "Required";
+    } else if (!/^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/gim.test(values.name)) {
+        errors.name = "Invalid name";
+    }
+    if (!values.surname) {
+        errors.surname = "Required";
+    } else if (
+        !/^(?=.{1,50}$)[a-z]+(?:['_.\s][a-z]+)*$/gim.test(values.surname)
+    ) {
+        errors.surname = "Invalid surname";
+    }
+    if (!values.email) {
+        errors.email = "Required";
+    } else if (
+        !/^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]{0,64}@[a-zA-ZöäüÖÄÜß0-9](?:[a-zA-ZöäüÖÄÜß0-9-]{0,255}[a-zA-ZöäüÖÄÜß0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,56}[a-zA-Z0-9])?)+$/i.test(
+            values.email
+        )
+    ) {
+        errors.email = "Invalid email address";
+    }
+    if (!values.phone) {
+        errors.phone = "Required";
+    } else if (
+        !/^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/.test(values.phone)
+    ) {
+        errors.phone = "Invalid phone";
+    }
+    if (!values.passport) {
+        errors.passport = "Required";
+    } else if (!/^\d{6}[A-Z]{2}$/.test(values.passport)) {
+        errors.passport = "Invalid passport";
+    }
 
-  return errors;
+    return errors;
 };
 
 // import { useEffect, useState } from "react";

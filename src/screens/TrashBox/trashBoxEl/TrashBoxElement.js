@@ -1,16 +1,16 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {onDecreace, onDeleteEl, onIncreace} from "../../../store/reducers/trashBox";
+import {useDispatch} from "react-redux";
+import {onDecreace, onIncreace} from "../../../store/reducers/trashBox";
 import './trashBoxEl.css'
-import PopupSuccess from "../../../pages/successfulPopup/PopupSuccess";
-import {onCloseDelete, onCloseSuccess, onOpenDelete, onOpenSuccess} from "../../../store/reducers/popups";
+import {onOpenDelete} from "../../../store/reducers/popups";
+
 const TrashBoxElement = ({item, index}) => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const increase = () => {
-            dispatch(onIncreace({data: item, count: item.count}))
+        dispatch(onIncreace({data: item, count: item.count}))
     }
 
     const decrease = () => {
@@ -21,31 +21,13 @@ const TrashBoxElement = ({item, index}) => {
         }
     }
 
-
-    // const decrease = () => {
-    //     if (item.count === 1) {
-    //         dispatch(onOpenSuccess())
-    //         dispatch(onDeleteEl(item))
-    //         setTimeout(() => {
-    //             dispatch(onCloseSuccess());
-    //         }, 3000);
-    //     } else {
-    //         dispatch(onDecreace({data: item, count: item.count}))
-    //     }
-    //
-    // }
-
-
-    // console.log('amount', amount)
-
     const handleClick = () => {
         navigate('/cryptoPage', {state: item})
     }
-    // console.log('TrashBoxEl', item)
-    // console.log('state', state)
+
     return (
         <>
-            <div style={index===0 ? { marginTop: '80px' } : { marginTop: '30px' }}
+            <div style={index === 0 ? {marginTop: '80px'} : {marginTop: '30px'}}
                  className="cryptoElement-wrapper">
                 <div className="cryptoElements">
                     <img className="cryptoIcon" src={item.image} alt={`${item.name} picture`}/>

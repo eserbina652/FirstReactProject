@@ -1,6 +1,5 @@
 body {
     background-color: black;
-    /*z-index: -5;*/
 }
 
 .all-wrapper {
@@ -26,16 +25,6 @@ a:-webkit-any-link {
     text-decoration: none;
     color: white;
 }
-
-/*.trashBox-link {*/
-/*    display: flex;*/
-/*    position: fixed;*/
-/*    flex-direction: column;*/
-/*    margin-top: -30px;*/
-/*    left: 85%;*/
-/*    width: auto;*/
-/*    font-size: 30px;*/
-/*}*/
 
 .links-img{
     width:80px;
