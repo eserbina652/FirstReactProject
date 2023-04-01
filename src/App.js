@@ -3,13 +3,13 @@ import React from "react";
 import Popup from "./pages/popup/Popup";
 import PopupSuccess from "./pages/successfulPopup/PopupSuccess";
 import {useSelector} from "react-redux";
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
-import Main from "./screens/Main/Main";
-import CryptoList from "./screens/Crypto/CryptoList";
-import CryptoCardPage from "./screens/Crypto/cryptoCardPage/CryptoCardPage";
-import {airplane, cryptoCoin, trashBox} from "./assets";
-import TrashBoxList from "./screens/TrashBox/TrashBoxList";
+import {Route, Routes} from "react-router-dom";
+import Main from "./routes/Main";
+import CryptoList from "./routes/CryptoList";
+import CryptoCardPage from "./routes/CryptoCardPage";
+import TrashBoxList from "./routes/TrashBoxList";
 import DeleteCryptoCoinPopup from "./pages/popup/deleteCryptoCoinPopup/DeleteCryptoCoinPopup";
+import Navbar from "./components/Navbar";
 
 function App() {
     const isOpenSuccess = useSelector((state) => state.popups.isOpenSuccess);
@@ -17,22 +17,8 @@ function App() {
     const isOpenDelete = useSelector((state) => state.popups.isOpenDelete);
 
     return (
-        <BrowserRouter>
-            <div className="header">
-                <Link className="links-wrapper" to="/crypto">
-                    <p className="header-text">Crypto-Coins</p>
-                    <img className="links-img" src={cryptoCoin} alt="Crypto-Coins"/>
-                </Link>
-                <Link className="links-wrapper" to="/">
-                    <p className="header-text">Airplane Tickets</p>
-                    <img className="links-img" src={airplane} alt="Airplane Tickets"/>
-                </Link>
-                <Link className="links-wrapper" to="/trashBox">
-                    <p className="header-text">Shopping Basket</p>
-                    <img className="links-img" src={trashBox} alt="trashBox"/>
-                </Link>
-            </div>
-
+        <>
+            <Navbar/>
             {popupItem && <Popup/>}
             {isOpenSuccess && <PopupSuccess/>}
             {isOpenDelete && <DeleteCryptoCoinPopup/>}
@@ -42,7 +28,7 @@ function App() {
                 <Route path="/cryptoPage" element={<CryptoCardPage/>}/>
                 <Route path="/trashBox" element={<TrashBoxList/>}/>
             </Routes>
-        </BrowserRouter>
+        </>
     );
 }
 

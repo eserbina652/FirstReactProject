@@ -20,7 +20,6 @@ const TrashBoxElement = ({item, index}) => {
             dispatch(onDecreace({data: item, count: item.count}))
         }
     }
-
     const handleClick = () => {
         navigate('/cryptoPage', {state: item})
     }

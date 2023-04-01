@@ -21,6 +21,7 @@ const CryptoCard = ({item}) => {
     const handleClick = () => {
         navigate('/cryptoPage', {state: item})
     }
+
     return (
         <>
             <div className="cryptoElements-wrapper">

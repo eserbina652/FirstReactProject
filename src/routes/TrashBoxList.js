@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector} from "react-redux";
-import TrashBoxElement from './trashBoxEl/TrashBoxElement'
-import './trashBoxEl/trashBoxEl.css'
+import TrashBoxElement from '../screens/TrashBox/trashBoxEl/TrashBoxElement'
+import '../screens/TrashBox/trashBoxEl/trashBoxEl.css'
 
 const TrashBoxList = () => {
     const item = useSelector(state => state.trashBox.item)

@@ -35,7 +35,7 @@ export const popupSlice = createSlice({
             state.deletedId = action.payload
             return state;
         },
-        onCloseDelete: (state, action) => {
+        onCloseDelete: (state) => {
             state.isOpenDelete = initialState.isOpenDelete;
             return state;
         },
