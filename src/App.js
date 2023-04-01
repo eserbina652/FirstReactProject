@@ -3,7 +3,7 @@ import React from "react";
 import Popup from "./pages/popup/Popup";
 import PopupSuccess from "./pages/successfulPopup/PopupSuccess";
 import {useSelector} from "react-redux";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Main from "./routes/Main";
 import CryptoList from "./routes/CryptoList";
 import CryptoCardPage from "./routes/CryptoCardPage";

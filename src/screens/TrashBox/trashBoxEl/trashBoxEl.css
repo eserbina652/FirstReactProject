@@ -9,10 +9,9 @@
 }
 
 .cryptoElement-wrapper {
-    /*display: inherit;*/
     position: relative;
     padding: 20px;
-    box-shadow: #ffdd00 0.5vw 0.5vw 2vw 0 ;
+    box-shadow: #ffdd00 0.5vw 0.5vw 2vw 0;
     max-width: 100%;
     z-index: 1;
 }
