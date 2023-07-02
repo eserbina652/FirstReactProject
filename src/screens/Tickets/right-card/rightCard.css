@@ -1,0 +1,11 @@
+.right-ticket {
+    display: flex;
+    flex-direction: column;
+    min-width: fit-content;
+    border: 2px solid #002aff;
+    box-shadow: #ffdd00 1vw 1vw 2vw -1vw;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: lightgray;
+}
+

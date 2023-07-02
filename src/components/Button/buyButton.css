@@ -1,15 +1,24 @@
 .button-for-buy-a-ticket {
     max-width: 17vw;
-    height: 9vh;
     background-color: darkorange;
     color: white;
     font-weight: bold;
+    height: 7vw;
+    max-height: 100px;
     border-color: darkred;
     cursor: pointer;
-    font-size: 2.5vh;
-    padding: 1vh 2vw 1vh 2vw;
+    font-size: 18px;
+    padding: 5px 10px;
 }
 
 #popup-button {
     background-color: rebeccapurple;
+}
+
+@media (max-width: 769px) {
+    .button-for-buy-a-ticket{
+        height: 10vw;
+        font-size: 14px;
+        max-width: fit-content;
+    }
 }

@@ -5,7 +5,7 @@ import {
   ON_SET_FILTER,
   ON_SORT,
 } from "../types/ticketsTypes";
-import res from "../../../../pages/ticketsValidations/right-card/response";
+import res from "../../../../screens/Tickets/right-card/response";
 
 const initialState = {
   ticketsData: res,

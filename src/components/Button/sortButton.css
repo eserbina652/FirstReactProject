@@ -1,11 +1,12 @@
 .valuta-button {
     background-color: rebeccapurple;
     border: 0.15vw solid lightskyblue;
-    width: 7vw;
-    height: 6vh;
+    width: fit-content;
+    height: fit-content;
     border-radius: 0.5vw;
     color: lightskyblue;
-    font-size: 1.5vw;
+    font-size: 18px;
+    padding: 20px;
     cursor: pointer;
 }
 
@@ -15,6 +16,15 @@
 }
 
 ._sortButton {
-    margin-top: 3vh;
+    margin-top: 2vw;
     min-width: 7vw;
+    margin-bottom: 1vw;
+}
+
+@media (max-width: 769px) {
+    .valuta-button._sortButton{
+        padding: 15px;
+        min-width: fit-content;
+        margin-top: 15px;
+    }
 }

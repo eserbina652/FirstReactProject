@@ -1,0 +1,18 @@
+.left-card-header {
+    position: relative;
+    font-size: 22px;
+    margin-bottom: 1vw;
+}
+
+.buttons-wrapper {
+    display: inline-flex;
+    background-color: rebeccapurple;
+    border-radius: 15px;
+    border: 0.75vw solid rebeccapurple;
+}
+
+@media (max-width: 769px) {
+    .buttons-wrapper{
+        padding: 8px;
+    }
+}

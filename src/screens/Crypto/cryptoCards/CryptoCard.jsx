@@ -12,7 +12,6 @@ const CryptoCard = ({item}) => {
     const toAdd = () => {
         const currentEl = itemList.find(el => el.id === item.id)
         if (currentEl) {
-            console.log('currentEl', currentEl)
             dispatch(onIncreace({data: currentEl, count: currentEl.count}))
         } else {
             dispatch(onAdd(item))

@@ -1,0 +1,32 @@
+.popup-middle {
+    display: flex;
+    position: relative;
+}
+
+.popup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=text], input[type=number], input[type=email] {
+    font-size: 20px;
+    margin-bottom: 2vw;
+    background-color: aliceblue;
+    border: none;
+    border-bottom: 1px solid darkgrey;
+}
+
+.name-input, .surname-input, .email-input, .phone-input, .passport-input {
+    display: flex;
+}
+
+@media (max-width: 769px) {
+    input[type=text], input[type=number], input[type=email] {
+        font-size: 14px;
+    }
+
+    .name-input, .surname-input, .email-input, .phone-input, .passport-input {
+        flex-direction: column;
+    }
+
+}

@@ -26,14 +26,13 @@ export default () => {
     const increase = () => {
         setPage(page + 1)
     }
-    console.log('data', data);
     return (
         <>
             <div className="button-wrap">
                 <button className="decreaseButton" onClick={decrease}>Previous</button>
                 <button className="increaseButton" onClick={increase}>Next</button>
             </div>
-            <div>
+            <div className='crypto-list-wrap'>
                 {data.map((e, index) => {
                     return (
                         <CryptoCard item={e} key={index.toString()}/>

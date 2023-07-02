@@ -15,14 +15,11 @@ export const trashBoxSlice = createSlice({
         onIncreace: (state, action) => {
             let temp2 = {...action.payload.data, count: action.payload.count + 1}
             const index = state.item.findIndex(el => el.id === action.payload.data.id)
-            console.log('action.payload', action.payload)
             state.item[index] = temp2
             return state
         },
         onDecreace: (state, action) => {
             let temp2 = {...action.payload.data, count: action.payload.count - 1}
-            console.log('action.payload.data', action.payload);
-
             const index = state.item.findIndex(el => el.id === action.payload.data.id)
             state.item[index] = temp2
             return state

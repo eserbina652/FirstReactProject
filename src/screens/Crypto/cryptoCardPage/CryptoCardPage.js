@@ -10,12 +10,9 @@ const CryptoCardPage = () => {
     const dispatch = useDispatch()
 
 
-    console.log('item', item)
-
     const toAdd = () => {
         const currentEl = item.find(el => el.id === state.id)
         if (currentEl) {
-            console.log('currentEl', currentEl)
             dispatch(onIncreace({data: currentEl, count: currentEl.count}))
         } else {
             dispatch(onAdd(state))
@@ -23,7 +20,7 @@ const CryptoCardPage = () => {
     }
     return (
         <>
-            <div className="cryptoElement-wrapper">
+            <div className="cryptoElement-wrapperPage">
                 <div className="headers">
                     <p id="icon">Icon</p>
                     <h3 id="name">Name</h3>

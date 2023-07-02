@@ -1,0 +1,11 @@
+.ticket-list{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+@media (max-width: 769px) {
+    .ticket-list{
+        width: 95%;
+    }
+}

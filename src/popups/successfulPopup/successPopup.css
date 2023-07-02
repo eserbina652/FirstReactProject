@@ -1,0 +1,47 @@
+.success-popup-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 99%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.46);
+    top: 0;
+    position: fixed;
+    z-index: 100;
+}
+
+.success-popup-little-window {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3vw 2vw 3vw 2vw;
+    min-height: min-content;
+    width: fit-content;
+    background-color: white;
+    border: 0.1rem solid black;
+    border-radius: 2vw;
+}
+
+.success-close-button {
+    display: inherit;
+    justify-content: flex-end;
+}
+
+.successPicture {
+    display: inherit;
+    width: 230px;
+    margin: 20px;
+}
+
+
+.underPictureText {
+    display: inherit;
+    justify-content: center;
+    font-size: 50px;
+}
+
+@media (max-width: 769px) {
+    .underPictureText{
+        font-size: 22px;
+    }
+}

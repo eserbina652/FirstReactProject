@@ -1,14 +1,14 @@
 import "./app.css";
 import React from "react";
-import Popup from "./pages/popup/Popup";
-import PopupSuccess from "./pages/successfulPopup/PopupSuccess";
+import Popup from "./popups/Popup";
+import PopupSuccess from "./popups/successfulPopup/PopupSuccess";
 import {useSelector} from "react-redux";
 import {Route, Routes} from "react-router-dom";
 import Main from "./routes/Main";
 import CryptoList from "./routes/CryptoList";
 import CryptoCardPage from "./routes/CryptoCardPage";
 import TrashBoxList from "./routes/TrashBoxList";
-import DeleteCryptoCoinPopup from "./pages/popup/deleteCryptoCoinPopup/DeleteCryptoCoinPopup";
+import DeleteCryptoCoinPopup from "./popups/deleteCryptoCoinPopup/DeleteCryptoCoinPopup";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -33,12 +33,6 @@ function App() {
 }
 
 export default App;
-
-
-/*
-success styles!
- */
-
 
 
 

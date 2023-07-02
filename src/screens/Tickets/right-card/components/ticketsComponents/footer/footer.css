@@ -1,0 +1,33 @@
+.line-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.big-line {
+    width: 45vw;
+    height: 0.2vw;
+    background-color: #e0e0e0;
+    margin: 1.5vw 0 1.5vw 0;
+}
+
+.tickets-footer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.footers-picture {
+    min-width: 30%;
+    height: 7vw;
+    max-height: 100px;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 769px) {
+    .footers-picture{
+        height: 10vw;
+    }
+    .button-for-buy-a-ticket{
+        height: auto;
+    }
+}

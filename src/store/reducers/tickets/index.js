@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import res from "../../../pages/ticketsValidations/right-card/response";
+import res from "../../../screens/Tickets/right-card/response";
 
 const initialState = {
     ticketsData: res,

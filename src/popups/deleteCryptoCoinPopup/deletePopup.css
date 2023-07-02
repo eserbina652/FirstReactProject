@@ -1,0 +1,51 @@
+.delete-popup-wrapper {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 99vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.46);
+    margin: -150px 0 0 -8px;
+    z-index: 100;
+}
+
+.delete-popup-little-window {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    padding: 3vw 2vw;
+    margin-top: 100px;
+    width: 50%;
+    height: auto;
+    background-color: #001388;
+    border: 3px solid #ffdd00;
+    box-shadow: #ffdd00 0 0 2vw 0 ;
+    border-radius: 2vw;
+    z-index: 101;
+}
+
+.middle-text {
+   display: inherit;
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+    color: #ffdd00;
+}
+
+.middleButtons {
+    display: inherit;
+    position: relative;
+    justify-content: center;
+}
+
+.deleteButtons {
+    background-color: #ffdd00;
+    font-size: 30px;
+    margin: 30px;
+    cursor: pointer;
+}
+
+.deleteButtons:hover {
+    box-shadow: #ffdd00 0 0 3vw 0 ;
+}

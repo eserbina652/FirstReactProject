@@ -1,0 +1,62 @@
+.tickets-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 22px;
+    line-height: 0;
+    background-color: aliceblue;
+}
+
+.left-side {
+    display: flex;
+     flex-direction: column;
+    align-items: center;
+}
+
+.tickets-time {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.tickets-country {
+    display: flex;
+    flex-direction: row;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.little-line {
+    width: 20vw;
+    height: 0.1vw;
+    background-color: grey;
+}
+
+.right-card-middle-picture {
+    width: 3vw;
+    height: 3.5vw;
+    margin: 1vw 0;
+    background-repeat: no-repeat;
+}
+
+.right-side {
+    display: flex;
+     flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 769px) {
+    .tickets-main{
+        font-size: 14px;
+    }
+    .tickets-time{
+        font-size: 16px;
+    }
+    .tickets-country{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
