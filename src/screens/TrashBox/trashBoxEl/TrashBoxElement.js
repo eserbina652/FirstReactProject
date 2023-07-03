@@ -26,7 +26,7 @@ const TrashBoxElement = ({item, index}) => {
 
     return (
         <>
-            <div style={index === 0 ? {marginTop: '0'} : {marginTop: '30px'}}
+            <div style={index === 0 ? {marginTop: '10px'} : {marginTop: '30px'}}
                  className="cryptoElement-wrapper">
                 <div className="cryptoElements">
                     <img className="cryptoIcon" src={item.image} alt={`${item.name} picture`}/>

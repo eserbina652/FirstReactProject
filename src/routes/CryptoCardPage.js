@@ -21,7 +21,7 @@ const CryptoCardPage = () => {
 
     return (
         <>
-            <div className="cryptoElement-wrapper">
+            <div className="cryptoElement-wrapperPage">
                 <div className="headers">
                     <p id="icon">Icon</p>
                     <h3 id="name">Name</h3>

@@ -5,7 +5,9 @@
     border: #0039ff solid 3px;
     border-radius: 20px;
     background-color: #f3ffff;
-    top: 150px!important;
+    margin: 0 auto;
+    max-width: fit-content;
+    top: 155px;
     z-index: 1;
 }
 
@@ -54,4 +56,22 @@
     display: inherit;
     width: 15vw;
     justify-content: center;
+}
+
+@media (max-width: 769px) {
+    .cryptoElement-wrapperPage{
+        flex-direction: row;
+        max-width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    .headers,.values{
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+    }
+    .headers p,h3,.values p, h3{
+        margin: 5px 0;
+    }
 }
