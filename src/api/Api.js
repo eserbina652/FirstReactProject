@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default class Api {
     static baseURL = 'https://api.coingecko.com/api/v3'
 
