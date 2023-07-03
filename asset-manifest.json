@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/FirstReactProject/static/css/main.ff96c936.css",
+    "main.js": "/FirstReactProject/static/js/main.8e7e268b.js",
+    "static/media/3950315.png": "/FirstReactProject/static/media/3950315.1519ce45a410879b06e3.png",
+    "static/media/check-circle-regular.svg": "/FirstReactProject/static/media/check-circle-regular.569b624a074abd910b734f03ea279462.svg",
+    "static/media/plane-solid.svg": "/FirstReactProject/static/media/plane-solid.9b2d67b6204184c54580d0f33f056e20.svg",
+    "index.html": "/FirstReactProject/index.html",
+    "main.ff96c936.css.map": "/FirstReactProject/static/css/main.ff96c936.css.map",
+    "main.8e7e268b.js.map": "/FirstReactProject/static/js/main.8e7e268b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff96c936.css",
+    "static/js/main.8e7e268b.js"
+  ]
+}
